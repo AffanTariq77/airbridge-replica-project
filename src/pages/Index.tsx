@@ -94,28 +94,32 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden bg-[#F7F4FD]">
         {/* Background Ornaments */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[1400px] pointer-events-none hidden lg:block">
+        <div className="absolute top-[20%] right-[5%] w-[180px] z-20 animate-float">
           <img
             src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-slider3-4.png"
             alt=""
-            className="absolute top-[20%] right-[5%] w-[180px] h-auto animate-float opacity-80"
+            className="w-full h-auto transition-transform duration-300 hover:-translate-y-2"
           />
+        </div>
+        <div className="absolute top-[10%] left-[45%] w-[150px] z-20 animate-float delay-100">
           <img
             src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-slider1-4.png"
             alt=""
-            className="absolute top-[10%] left-[45%] w-[150px] h-auto animate-float opacity-50 delay-100"
+            className="w-full h-auto transition-transform duration-300 hover:-translate-y-2"
           />
+        </div>
+        <div className="absolute bottom-[15%] right-[40%] w-[120px] z-20 animate-float delay-300">
           <img
             src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-slider1-4.png"
             alt=""
-            className="absolute bottom-[15%] right-[40%] w-[120px] h-auto animate-float opacity-40 delay-300"
+            className="w-full h-auto transition-transform duration-300 hover:-translate-y-2"
           />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
-              <span className="section-badge mb-6 inline-block text-[14px] font-bold text-[#222222] bg-[#FFFFFF] px-5 py-3 rounded-full shadow-sm">
+              <span className="section-badge mb-6 inline-block text-[14px] font-bold text-[#222222] bg-[#FFFFFF] rounded-full shadow-sm">
                 INTO THE FUTURE
               </span>
               <h1 className="text-4xl lg:text-[40px] font-extrabold mb-6 leading-[1.2] text-[#000000] font-inter">
@@ -132,11 +136,11 @@ const Index = () => {
                 </Button>
               </Link>
             </div>
-            <div className="relative animate-float hidden lg:block">
+            <div className="relative animate-float hidden lg:block z-0">
               <img
                 src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-slide_IMG-4.png"
                 alt="3D AI Technology Illustration"
-                className="w-full max-w-[630px] mx-auto drop-shadow-2xl"
+                className="w-full max-w-[630px] mx-auto drop-shadow-2xl transition-transform duration-300 ease-out hover:translate-y-2 hover:-translate-x-2"
               />
             </div>
           </div>
@@ -208,25 +212,25 @@ const Index = () => {
               Bridging the Gap from <br className="hidden sm:block" />
               Vision to Execution
             </h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-12">
-              <div className="flex items-center gap-4 justify-center">
-                <div className="flex items-center justify-center">
-                  <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/eye-scan.png" />
+            <div className="grid md:grid-cols-2 gap-20 lg:gap-32 max-w-4xl mx-auto mb-12 mt-12">
+              <div className="flex flex-col items-center md:items-end gap-8">
+                <div className="flex items-center justify-center w-36 h-36 hover:scale-105 transition-transform duration-300">
+                  <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/eye-scan.png" alt="Vision Icon" />
                 </div>
-                <div className="text-left">
-                  <h4 className="font-bold text-[#FFFFFF]">Vision:</h4>
-                  <p className="text-sm text-[#FFFFFF]">
+                <div className="text-center md:text-right">
+                  <h4 className="font-semibold text-[#FFFFFF]">Vision:</h4>
+                  <p className="text-base text-[#FFFFFF]">
                     Discover what's possible through clarity, creativity, and AI insight.
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 justify-center">
-                <div className="flex items-center justify-center">
-                  <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/chip.png" />
+              <div className="flex flex-col items-center md:items-start gap-8">
+                <div className="flex items-center justify-center w-36 h-36 hover:scale-105 transition-transform duration-300">
+                  <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/chip.png" alt="Execution Icon" />
                 </div>
-                <div className="text-left">
-                  <h4 className="font-bold text-[#FFFFFF]">Execution:</h4>
-                  <p className="text-sm text-[#FFFFFF]">
+                <div className="text-center md:text-left">
+                  <h4 className="font-semibold text-[#FFFFFF]">Execution:</h4>
+                  <p className="text-base text-[#FFFFFF]">
                     From concept to completion, we turn intelligent ideas into working
                     systems.
                   </p>
@@ -319,7 +323,7 @@ const Index = () => {
       < section className="py-20 bg-[#FFFFFF]" >
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="hidden lg:block relative w-full">
+            <div className="hidden lg:block relative w-full group cursor-pointer">
               {/* Bottom Image */}
               <img
                 src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-About_img-4.png"
@@ -331,7 +335,7 @@ const Index = () => {
               <img
                 src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-over_img-4.png"
                 alt="Technology Network"
-                className="absolute top-0 left-0 w-full h-full object-contain"
+                className="absolute top-0 left-0 w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
               />
             </div>
 
