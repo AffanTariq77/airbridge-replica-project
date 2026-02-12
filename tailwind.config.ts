@@ -50,6 +50,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        "brand-lavender": "hsl(var(--brand-lavender) / <alpha-value>)",
+        "brand-lavender-dark": "hsl(var(--brand-lavender-dark) / <alpha-value>)",
+        "brand-grey": "hsl(var(--brand-grey) / <alpha-value>)",
         // Custom brand colors
         purple: {
           50: "#faf5ff",

@@ -4,12 +4,20 @@ interface PageHeroProps {
   title: string;
   subtitle?: string;
   badge?: string;
+  backgroundImage?: string;
   children?: ReactNode;
 }
 
-const PageHero = ({ title, subtitle, badge, children }: PageHeroProps) => {
+const PageHero = ({ title, subtitle, badge, backgroundImage, children }: PageHeroProps) => {
   return (
-    <section className="page-hero-bg relative py-20 lg:py-28 overflow-hidden">
+    <section
+      className="page-hero-bg relative py-20 lg:py-28 overflow-hidden"
+      style={backgroundImage ? {
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center'
+      } : {}}
+    >
       {/* Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute right-0 top-0 w-1/2 h-full opacity-20">
@@ -42,11 +50,11 @@ const PageHero = ({ title, subtitle, badge, children }: PageHeroProps) => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl">
           {badge && <span className="section-badge mb-6 inline-block">{badge}</span>}
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-[40px] lg:text-[45px] xl:text-[50px] font-semibold mb-6 leading-tight">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl">
+            <p className="text-[16px] lg:text-[18px] text-muted-foreground max-w-2xl">
               {subtitle}
             </p>
           )}

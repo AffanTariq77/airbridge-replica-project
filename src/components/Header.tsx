@@ -23,24 +23,25 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-tight">
+
+            <img src="https://airbridgedevs.com/wp-content/uploads/2025/10/cropped-air-bridg-g.png" alt="" />
+            {/* <span className="text-2xl font-bold tracking-tight">
               <span className="text-foreground">AIR</span>
               <span className="text-primary">BRIDGE</span>
             </span>
             <span className="text-xs font-medium text-muted-foreground tracking-widest border-t border-muted-foreground pt-0.5">
               DEVS
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`nav-link text-sm ${
-                  isActive(link.path) ? "text-primary" : ""
-                }`}
+                className={`nav-link text-sm ${isActive(link.path) ? "text-primary" : ""
+                  }`}
               >
                 {link.name}
               </Link>
@@ -78,9 +79,8 @@ const Header = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm font-medium ${
-                    isActive(link.path) ? "text-primary" : "text-foreground"
-                  }`}
+                  className={`text-sm font-medium ${isActive(link.path) ? "text-primary" : "text-foreground"
+                    }`}
                 >
                   {link.name}
                 </Link>
