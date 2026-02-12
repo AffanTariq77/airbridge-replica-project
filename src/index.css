@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
@@ -47,6 +48,14 @@
     --cyan-accent: 186 100% 70%;
     --magenta-accent: 322 80% 55%;
     --navy: 240 50% 15%;
+    --brand-lavender: 257 60% 97%;
+    /* #F7F4FD */
+    --brand-grey: 240 5% 97%;
+    /* #F7F7F8 */
+    --brand-lavender-dark: 240 70% 95%;
+    /* #E5E5FD */
+
+    /* Gradients */
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(322, 80%, 55%) 100%);
@@ -100,12 +109,18 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight;
   }
 }
 
 @layer components {
+
   /* Hero Gradient Background */
   .hero-gradient {
     background: linear-gradient(135deg, hsl(252, 30%, 97%) 0%, hsl(262, 40%, 95%) 100%);
@@ -120,8 +135,20 @@
 
   /* Primary Gradient Button */
   .btn-gradient {
-    background: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(322, 80%, 55%) 100%);
-    @apply text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-105;
+    background: linear-gradient(90deg, #2710BF 0%, #B32BD1 50%, #2710BF 100%);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    @apply text-white uppercase font-semibold px-10 py-4 rounded-full inline-flex items-center justify-center transition-all duration-300 ease-out hover:shadow-lg hover:shadow-primary/30 hover:scale-105;
+  }
+
+  .btn-gradient:hover {
+    background-position: 100% 50%;
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(39, 16, 191, 0.3);
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-primary;
   }
 
   /* Outline Button with Gradient Border */
@@ -132,12 +159,12 @@
 
   /* Service Card */
   .service-card {
-    @apply bg-card rounded-2xl p-8 text-center border border-border transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1;
+    @apply bg-card rounded-2xl p-8 text-center border border-border transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 hover:bg-brand-lavender/50;
   }
 
   /* Section Badge/Tag */
   .section-badge {
-    @apply inline-block px-4 py-2 text-sm font-medium tracking-wider uppercase rounded-full border border-border bg-background;
+    @apply inline-block px-[20px] py-[15px] text-sm font-bold tracking-wider uppercase rounded-full bg-background;
   }
 
   /* FAQ Accordion Style */
@@ -168,7 +195,7 @@
 
   /* Grid pattern overlay */
   .grid-pattern {
-    background-image: 
+    background-image:
       linear-gradient(to right, hsl(262, 50%, 90%) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(262, 50%, 90%) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -200,7 +227,14 @@
 
   /* Phase card for engagement protocol */
   .phase-card {
-    @apply bg-card rounded-2xl overflow-hidden border border-border transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply bg-white rounded-2xl overflow-hidden border border-border transition-all duration-300;
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05);
+  }
+
+  .phase-card:hover {
+    @apply -translate-y-2;
+    box-shadow: 0px 15px 35px rgba(229, 229, 253, 0.6);
+    border-color: hsl(var(--primary) / 0.2);
   }
 
   /* Process step number */
@@ -208,17 +242,34 @@
     @apply w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg;
   }
 
+  /* AI Operation Card - Specialized for AI Expertise Page */
+  .ai-operation-card {
+    @apply bg-white p-[30px_20px] rounded-[15px] transition-all duration-300 text-center h-full flex flex-col justify-start;
+
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05);
+  }
+
+  .ai-operation-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 30px #E5E5FD;
+  }
+
+  .ai-operation-card-icon {
+    @apply text-[28px] text-primary bg-brand-lavender p-5 rounded-full mx-auto mb-6 flex items-center justify-center w-16 h-16;
+  }
+
   /* Animated gradient border */
   .gradient-border {
     position: relative;
     background: linear-gradient(var(--background), var(--background)) padding-box,
-                linear-gradient(135deg, hsl(262, 83%, 58%), hsl(322, 80%, 55%)) border-box;
+      linear-gradient(135deg, hsl(262, 83%, 58%), hsl(322, 80%, 55%)) border-box;
     border: 2px solid transparent;
     @apply rounded-2xl;
   }
 }
 
 @layer utilities {
+
   /* Text gradient */
   .text-gradient {
     background: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(322, 80%, 55%) 100%);
@@ -237,15 +288,41 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
   /* Stagger animation delay utilities */
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
 }

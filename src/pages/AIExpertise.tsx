@@ -10,29 +10,34 @@ import {
   StaffAugmentationIcon,
   StrategicConsultingIcon,
 } from "@/components/icons/ServiceIcons";
+import ServiceCard from "@/components/ServiceCard";
+import { Puzzle, ShieldCheck, Settings, Network } from "lucide-react";
+import CTASection from "@/components/CTASection";
+import StrategicFocus from "@/components/StrategicFocus";
+
 
 const AIExpertise = () => {
   const solutions = [
     {
-      icon: <FullStackIcon />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="LLM Integrations" className="w-full h-full object-contain" />,
       title: "LLM Integrations",
       description:
         "We begin by connecting the power of Large Language Models directly with your business systems, creating the essential foundation for advanced AI functionality.",
     },
     {
-      icon: <AIEngineeringIcon />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="AI Guardrails" className="w-full h-full object-contain" />,
       title: "AI Guardrails",
       description:
         "We implement a critical framework of safeguards and controls to ensure that all AI operations are safe, predictable, and aligned with your business standards.",
     },
     {
-      icon: <StaffAugmentationIcon />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Automation & Efficiency" className="w-full h-full object-contain" />,
       title: "Automation & Efficiency",
       description:
         "Our focus is turning AI capability into business efficiency. We deploy intelligent automation to streamline workflows, reduce costs, and increase your overall operational speed.",
     },
     {
-      icon: <StrategicConsultingIcon />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="Foundational AI Systems" className="w-full h-full object-contain" />,
       title: "Foundational AI Systems",
       description:
         "We architect AI systems for the long term. Our approach ensures the solutions we build are scalable, adaptable, and prepared to support your business as it evolves.",
@@ -41,31 +46,31 @@ const AIExpertise = () => {
 
   const aiApproach = [
     {
-      icon: <StrategicConsultingIcon />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="Operational Efficiency" className="w-full h-full object-contain" />,
       title: "Operational Efficiency",
       description:
         "Achieved by automating key processes and strengthening your existing systems for peak, reliable performance",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution2-5.png" alt="Secure Systems" className="w-16 h-16 object-contain" />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution2-5.png" alt="Secure Systems" className="w-full h-full object-contain" />,
       title: "Secure & Resilient Systems",
       description:
         "Building intelligent platforms on a foundation of trust, with resilient architecture designed for sustained, dependable operation.",
     },
     {
-      icon: <FullStackIcon />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Control & Guardrails" className="w-full h-full object-contain" />,
       title: "Control & Guardrails",
       description:
         "Establishing clear protocols and safeguards for a controlled, ethical, and effective deployment of AI capabilities.",
     },
     {
-      icon: <AIEngineeringIcon />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="Future-Proofing" className="w-full h-full object-contain" />,
       title: "Future-Proofing Your Core Systems",
       description:
         "Architecting a scalable framework that ensures your core AI capabilities can evolve and adapt to future challenges.",
     },
     {
-      icon: <StaffAugmentationIcon />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Actionable Intelligence" className="w-full h-full object-contain" />,
       title: "Actionable Intelligence",
       description:
         "Building systems that analyze complex data sets, uncovering critical insights, and empowering your team to make smarter, data-driven decisions.",
@@ -74,21 +79,25 @@ const AIExpertise = () => {
 
   const implementationSteps = [
     {
+      icon: <Puzzle />,
       step: "Integration",
       description:
         "We start by integrating Large Language Models (LLMs) into your existing systems to create the core connection for AI.",
     },
     {
+      icon: <ShieldCheck />,
       step: "Control",
       description:
         "Next, we implement essential AI Guardrails to ensure every output is safe, controlled, and reliable",
     },
     {
+      icon: <Settings />,
       step: "Automation",
       description:
         "Once controlled, the AI is used to automate key processes, increasing your operational speed and efficiency.",
     },
     {
+      icon: <Network />,
       step: "Foundation",
       description:
         "Finally, we build a scalable, foundational AI system that can adapt and support your long-term growth.",
@@ -126,17 +135,16 @@ const AIExpertise = () => {
       <Header />
 
       <PageHero
-        title="A Framework for Artificial Intelligence"
-        subtitle="Our strategic approach to designing and deploying intelligent systems."
+        title="Command Your AI Future"
+        subtitle="We build the intelligent systems that drive mission success."
+        backgroundImage="https://airbridgedevs.com/wp-content/uploads/2025/10/breadcumb_section-4.jpg"
       />
 
       {/* Solutions Section */}
-      <section className="py-20">
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6">
-          <div className="mb-16">
-            <span className="section-badge mb-4 inline-block">
-              OUR POWERFUL SOLUTIONS
-            </span>
+          <div className="text-center mb-16">
+            <span className="section-badge mb-4 inline-block bg-[#f7f7f8]">Our Powerful Solutions</span>
             <h2 className="text-3xl lg:text-4xl font-bold">
               What Solutions We Best Offer
             </h2>
@@ -144,30 +152,33 @@ const AIExpertise = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {solutions.map((solution, index) => (
-              <div key={index} className="service-card">
-                <div className="icon-container">{solution.icon}</div>
-                <h3 className="text-xl font-bold mb-4">{solution.title}</h3>
-                <p className="text-muted-foreground">{solution.description}</p>
-              </div>
+              <ServiceCard
+                key={index}
+                icon={solution.icon}
+                title={solution.title}
+                description={solution.description}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      {/* AI Approach Section */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="section-badge mb-4 inline-block">OUR APPROACH TO AI</span>
-            <h2 className="text-3xl lg:text-4xl font-bold max-w-4xl mx-auto">
-              We treat LLM integration as the starting point for a larger AI strategy
-              that builds a lasting, competitive advantage
-            </h2>
-          </div>
+      {/* Philosophy Section */}
+      <section className="py-24 bg-white anim-fade-in-up">
+        <div className="container max-w-[1300px] mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            <div className="flex flex-col gap-6 lg:pr-6">
+              <span className="section-badge w-fit inline-block bg-[#f7f7f8]">OUR APPROACH TO AI</span>
+              <h3 className="text-3xl lg:text-4xl font-normal leading-tight">
+                We treat LLM integration as the starting point for a larger AI strategy that builds a lasting, competitive advantage
+              </h3>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {aiApproach.map((item, index) => (
-              <div key={index} className="service-card bg-card">
+              <div
+                key={index}
+                className="service-card flex flex-col gap-4"
+              >
                 <div className="icon-container">{item.icon}</div>
                 <h3 className="text-xl font-bold mb-4">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
@@ -177,65 +188,91 @@ const AIExpertise = () => {
         </div>
       </section>
 
-      {/* Implementation Process */}
-      <section className="py-20">
+      {/* Steps Table/Anatomy Section */}
+      <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="section-badge mb-4 inline-block">
-              AI IMPLEMENTATION PROCESS
-            </span>
+            <span className="section-badge mb-4 inline-block bg-[#f7f7f8]">AI IMPLEMENTATION PROCESS</span>
             <h2 className="text-3xl lg:text-4xl font-bold">
               The Anatomy of an AI Operation
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {implementationSteps.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="step-number mx-auto mb-6">{index + 1}</div>
-                <h3 className="text-xl font-bold mb-4">{item.step}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {implementationSteps.map((step, index) => (
+              <div key={index} className="ai-operation-card">
+                <div className="ai-operation-card-icon">
+                  {step.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3">{step.step}</h3>
+                <p className="text-sm text-muted-foreground">{step.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-hero rounded-3xl p-12 max-w-3xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">
-                Start Your Business with AI?
-              </h3>
-              <p className="text-muted-foreground mb-8">
-                Successful AI adoption is more than a technical integration; it's a
-                strategic business evolution. Our approach focuses on creating secure,
-                efficient, and reliable systems that deliver a measurable, long-term
-                advantage.
-              </p>
-              <Link to="/contact-us">
-                <Button className="btn-gradient">Request a Briefing</Button>
-              </Link>
+          <StrategicFocus
+            title="Start Your Business with AI"
+            description="Successful AI adoption is more than a technical integration; it’s a strategic business evolution. Our approach focuses on creating secure, efficient, and reliable systems that deliver a measurable, long-term advantage."
+            items={[]}
+            buttonText=""
+            buttonLink=""
+          />
+
+          {/* <div className="bg-primary/5 rounded-3xl p-8 lg:p-12 border border-primary/10">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Strategic AI Implementation</h3>
+                <p className="text-muted-foreground mb-6">
+                  We don't just "add AI." We architect a complete mission-ready system
+                  that is secure, scalable, and built on a foundation of operational
+                  excellence.
+                </p>
+                <Link to="/contact-us">
+                  <Button className="btn-gradient">Start Your Project</Button>
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-card p-6 rounded-2xl border border-border text-center">
+                  <p className="text-3xl font-bold text-primary mb-1">24/7</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">
+                    Operational Support
+                  </p>
+                </div>
+                <div className="bg-card p-6 rounded-2xl border border-border text-center">
+                  <p className="text-3xl font-bold text-primary mb-1">100%</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">
+                    Secure Architecture
+                  </p>
+                </div>
+                <div className="bg-card p-6 rounded-2xl border border-border text-center">
+                  <p className="text-3xl font-bold text-primary mb-1">Deep</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">
+                    LLM Expertise
+                  </p>
+                </div>
+                <div className="bg-card p-6 rounded-2xl border border-border text-center">
+                  <p className="text-3xl font-bold text-primary mb-1">Global</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">
+                    Mission Ready
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
+      <FAQSection faqs={faqs} badge="Frequently Asked Questions" />
 
       {/* CTA Section */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            What's Your Next Strategic Objective?
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            Let's schedule a strategic discussion. Our specialists can help you define
-            a roadmap for AI that aligns with your most important business goals.
-          </p>
-          <Link to="/contact-us">
-            <Button className="btn-gradient">Request a Briefing</Button>
-          </Link>
-        </div>
-      </section>
+      <CTASection
+        badge="Request Free Trial"
+        title="Initiate Contact"
+        description="Whether you have a defined project or are in the early stages of planning, we're ready to listen. Send us a message to start the conversation."
+        buttonText="Discover More"
+        buttonLink="/services"
+      />
 
       <Footer />
     </div>
@@ -243,3 +280,4 @@ const AIExpertise = () => {
 };
 
 export default AIExpertise;
+

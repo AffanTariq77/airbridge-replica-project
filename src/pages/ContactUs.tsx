@@ -5,6 +5,8 @@ import FAQSection from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
+import CTASection from "@/components/CTASection";
+import StrategicFocus from "@/components/StrategicFocus";
 
 const ContactUs = () => {
   const faqs = [
@@ -32,124 +34,99 @@ const ContactUs = () => {
       <PageHero
         title="Open a Secure Channel"
         subtitle="Connect with the Airbridge Devs Command"
+        backgroundImage="https://airbridgedevs.com/wp-content/uploads/2025/10/breadcumb_section-4.jpg"
       />
 
-      {/* Contact Info Section */}
-      <section className="py-20">
+      {/* Direct Communication Section */}
+      <section className="py-24 bg-[#ffffff]">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-8 items-start">
-            {/* Left Column - Title */}
-            <div>
-              <span className="section-badge mb-4 inline-block">Contact Us</span>
-              <h2 className="text-3xl lg:text-4xl font-bold">
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Title / Info */}
+            <div className="flex flex-col justify-center">
+              <span className="section-badge mb-6 inline-block w-fit bg-[#f7f7f8]">Contact Us</span>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                 Direct Lines of Communication
               </h2>
+              <p className="text-muted-foreground">
+                Our command team is ready to coordinate your next strategic move. Reach
+                out via our secure channels.
+              </p>
             </div>
 
-            {/* Email Card */}
-            <div className="contact-card">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-                <Mail className="w-8 h-8 text-primary" />
+            {/* Email card */}
+            <div className="contact-card group">
+              <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-primary/10 flex items-center justify-center transition-transform group-hover:scale-110">
+                <Mail className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Email</h3>
+              <h3 className="text-2xl font-bold mb-4">Email</h3>
+              <p className="text-sm text-muted-foreground mb-4 uppercase tracking-widest">
+                General Inquiries
+              </p>
               <a
                 href="mailto:info@airbridgedevs.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-lg font-semibold hover:text-primary transition-colors"
               >
                 info@airbridgedevs.com
               </a>
             </div>
 
-            {/* Phone Card */}
-            <div className="contact-card">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-                <Phone className="w-8 h-8 text-primary" />
+            {/* Phone card */}
+            <div className="contact-card group">
+              <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-primary/10 flex items-center justify-center transition-transform group-hover:scale-110">
+                <Phone className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Phone</h3>
+              <h3 className="text-2xl font-bold mb-4">Phone</h3>
+              <p className="text-sm text-muted-foreground mb-4 uppercase tracking-widest">
+                Direct Command
+              </p>
               <a
                 href="tel:+16282625009"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-lg font-semibold hover:text-primary transition-colors"
               >
-                Mobile: +1 628 2625 009
+                +1 628 2625 009
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission Briefing CTA */}
-      <section className="py-12">
-        <div className="container mx-auto px-6">
-          <div className="cta-section text-center relative overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute right-0 top-0 w-64 h-64 opacity-10">
-              <svg viewBox="0 0 200 200" className="w-full h-full">
-                <path
-                  d="M100 0 L200 100 L100 200 L0 100 Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  fill="none"
-                />
-              </svg>
-            </div>
-
-            <span className="section-badge mb-6 inline-block relative z-10">
-              Initiate Your Mission Briefing
-            </span>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8 text-lg relative z-10">
-              Whether you have a defined objective or are in the early stages of
-              strategic planning, we're ready to engage. Use this form to outline your
-              requirements, and our command team will be in touch to coordinate our
-              next steps.
-            </p>
-            <Link to="/services">
-              <Button className="btn-gradient relative z-10">TRANSMIT MESSAGE</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <StrategicFocus
+        badge="Initiate Your Mission Briefing"
+        description="Whether you have a defined objective or are in the early stages of strategic planning, we’re ready to engage. Use this form to outline your requirements, and our command team will be in touch to coordinate our next steps."
+        buttonText="TRANSMIT MESSAGE"
+        buttonLink="#"
+      />
 
       {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
+      <FAQSection faqs={faqs} badge="Frequently Asked Questions" />
 
-      {/* Explore Capabilities CTA */}
-      <section className="py-12">
-        <div className="container mx-auto px-6 text-center">
+      {/* Bottom Capabilties Link */}
+      {/* <section className="py-20 bg-navy text-white text-center">
+        <div className="container mx-auto px-6">
+          <span className="section-badge mb-6 inline-block bg-white/10 text-white border border-white/20">
+            Explore Capabilities
+          </span>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-8">
+            Learn more about our strategic approach
+          </h2>
           <Link to="/services">
-            <Button variant="outline" className="btn-outline-gradient">
-              Explore Our Capabilities
+            <Button className="btn-gradient px-12 py-6 text-lg">
+              View Our Full Capabilities
             </Button>
           </Link>
         </div>
-      </section>
+      </section> */}
 
-      {/* Request Free Trial Section */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="section-badge mb-4 inline-block">REQUEST FREE TRIAL</span>
-            <p className="text-muted-foreground mb-8 text-lg">
-              Learn more about our strategic approach and the solutions we deploy to
-              ensure the success of our partners.
-            </p>
-            <Link to="/ai-expertise">
-              <Button className="btn-gradient">View Our Services</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Schedule Briefing */}
-      <section className="py-12">
-        <div className="container mx-auto px-6 text-center">
-          <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
-          <p className="text-muted-foreground mb-6">Schedule a Mission Briefing</p>
-          <Link to="mailto:info@airbridgedevs.com">
-            <Button className="btn-gradient">Get In Touch</Button>
-          </Link>
-        </div>
-      </section>
-
+      {/* Main Contact CTA with Form */}
+      <CTASection
+        badge="Initiate Your Mission Briefing"
+        title="Command Strategic Deployment"
+        description="Whether you have a defined objective or are in the early stages of strategic planning, we're ready to engage. Use this form to outline your requirements, and our command team will be in touch."
+        buttonText="TRANSMIT MESSAGE"
+        buttonLink="#"
+        introButtonText="EXPLORE OUR CAPABILITIES"
+        introButtonLink="#"
+      />
       <Footer />
     </div>
   );

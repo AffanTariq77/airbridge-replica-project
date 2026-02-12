@@ -35,6 +35,7 @@ const AboutUs = () => {
       <PageHero
         title="About Us"
         subtitle="Discover how our unique background and core principles translate into reliable, high-performance solutions."
+        backgroundImage="https://airbridgedevs.com/wp-content/uploads/2025/10/breadcumb_section-4.jpg"
       />
 
       {/* Mission Section */}
@@ -78,69 +79,73 @@ const AboutUs = () => {
       <section className="py-12">
         <div className="container mx-auto px-6">
           <div className="bg-gradient-primary rounded-3xl aspect-video max-w-4xl mx-auto overflow-hidden relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:bg-background/30 transition-colors">
-                <div className="w-0 h-0 border-t-8 border-t-transparent border-l-[16px] border-l-background border-b-8 border-b-transparent ml-1" />
-              </div>
-            </div>
-            {/* Animated gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/20 animate-pulse" />
           </div>
         </div>
-      </section>
+        {/* Decorative Accent */}
+        <div className="absolute -z-10 -bottom-6 -right-6 w-full h-full border-2 border-primary/20 rounded-3xl" />
+      </section >
 
       {/* Operational Model Section */}
-      <section className="py-20 bg-secondary">
+      < section className="py-24 bg-[hsl(var(--brand-lavender-dark))]" >
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <span className="section-badge mb-4 inline-block">OPERATIONAL MODEL</span>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Your Global Strategic Advantage
+          <div className="text-center mb-16">
+            <span className="section-badge mb-4 inline-block bg-white shadow-sm">
+              OPERATIONAL EXCELLENCE
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary">
+              The Airbridge Operational Model
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Our unique structure connects elite technical talent from our operational
-              hub in Pakistan with partners globally, particularly in the USA & KSA.
-              This model provides access to a deep pool of vetted experts, ensures
-              cost-effectiveness, and offers dedicated support designed for seamless
-              cross-border collaboration.{" "}
-              <strong className="text-foreground">
-                Experience the power
-              </strong>{" "}
-              of a truly global, integrated team.
-            </p>
-            <Link to="/contact-us">
-              <Button className="btn-gradient">Connect With Us</Button>
-            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
+              <div key={index} className="service-card bg-white border-none shadow-lg">
+                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mb-6 mx-auto">
+                  0{index + 1}
+                </div>
+                <h3 className="text-xl font-bold mb-2">{value}</h3>
+                <p className="text-sm text-muted-foreground">
+                  Our commitment to {value.toLowerCase()} ensures your project remains
+                  on target and resilient against all challenges.
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
+      < FAQSection faqs={faqs} badge="Frequently Asked Questions" />
 
       {/* CTA Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-8">
-            <Link to="/contact-us">
-              <Button variant="outline" className="btn-outline-gradient">
-                Ready to Launch Your Next Initiative?
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <CTASection
-        badge="REQUEST FREE TRIAL"
+      < CTASection
+        badge="Request Free Trial"
         title="Let's Discuss Your Objective"
-        description="Whether you're ready to start a new project, exploring how to scale your technical capabilities, or simply have questions about our approach, we'd love to hear from you."
+        description="Whether you’re ready to start a new project, exploring how to scale your technical capabilities, or simply have questions about our approach, we’d love to hear from you."
         buttonText="Discover More"
-        buttonLink="/ai-expertise"
+        buttonLink="/contact-us"
+        introButtonText="Ready to Launch Your Next Initiative?"
+        introButtonLink="/about-us/#"
       />
 
+      {/* {/* Join Our Command Section */}
+
+      {/* < section className="py-24 bg-navy text-white text-center" >
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-8">Join Our Command</h2>
+          <p className="text-lg opacity-80 max-w-2xl mx-auto mb-12">
+            We are always looking for elite technical talent to join our ranks. If you
+            have the discipline and skill to build the systems of tomorrow, we want to
+            hear from you.
+          </p>
+          <Link to="/contact-us">
+            <Button className="btn-gradient px-12 py-6 text-lg">VIEW OPEN POSITIONS</Button>
+          </Link>
+        </div>
+      </section > */}
+
       <Footer />
-    </div>
+    </div >
   );
 };
 
