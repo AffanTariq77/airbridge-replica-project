@@ -42,11 +42,16 @@ const AboutUs = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 relative group cursor-pointer">
               <img
                 src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-About_img-4.png"
                 alt="AI Innovation Visualization"
                 className="w-full max-w-lg mx-auto"
+              />
+              <img
+                src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-over_img-4.png"
+                alt="Technology Network"
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-full object-contain pointer-events-none transition-transform duration-500 group-hover:scale-105"
               />
             </div>
             <div className="order-1 lg:order-2">
