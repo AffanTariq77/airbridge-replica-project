@@ -17,31 +17,39 @@ import StrategicFocus from "@/components/StrategicFocus";
 const Index = () => {
   const services = [
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Full-Stack" className="w-16 h-16 object-contain" />,
-      title: "Full-Stack Development",
-      description:
-        "Building durable, secure, and high-performance digital platforms, from initial front-end design to final back-end architecture.",
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="AI Engineering" className="w-16 h-16 object-contain" />,
+      title: "AI-Driven Engineering & Consulting",
+      description: "Designing secure, scalable AI solutions—combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
+      //  "Applying custom AI pipelines, automation, and Large Language Models (LLMs) to improve your operational speed and overall effectiveness.",
       link: "/services",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="AI Engineering" className="w-16 h-16 object-contain" />,
-      title: "AI-Driven Engineering",
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Full-Stack" className="w-16 h-16 object-contain" />,
+      title: "LLM Cost Audit & Optimization",
       description:
-        "Applying custom AI pipelines, automation, and Large Language Models (LLMs) to improve your operational speed and overall effectiveness.",
+        "Uncovering hidden inefficiencies in your LLM stack to reduce token and model costs by up to 80% through disciplined audits, architecture optimization, and continuous performance monitoring.",
       link: "/services",
     },
+
+    // {
+    //   icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="AI Consulting" className="w-16 h-16 object-contain" />,
+    //   title: "Strategic AI Consulting",
+    //   description:
+    //     "Providing a clear strategic plan to help you design, build, and scale your AI capabilities with a focus on security, reliability, and long-term results.",
+    //   link: "/services",
+    // },
+    // {
+    //   icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="Full-Stack" className="w-16 h-16 object-contain" />,
+    //   title: "Full-Stack Development",
+    //   description:
+    //     "Building durable, secure, and high-performance digital platforms, from initial front-end design to final back-end architecture.",
+    //   link: "/services",
+    // },
     {
       icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Staff Augmentation" className="w-16 h-16 object-contain" />,
       title: "Staff Augmentation",
       description:
         "Embedding our specialists within your team to provide the focused expertise needed to solve difficult problems and meet critical deadlines.",
-      link: "/services",
-    },
-    {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="AI Consulting" className="w-16 h-16 object-contain" />,
-      title: "Strategic AI Consulting",
-      description:
-        "Providing a clear strategic plan to help you design, build, and scale your AI capabilities with a focus on security, reliability, and long-term results.",
       link: "/services",
     },
   ];
@@ -147,29 +155,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Clients Section */}
-      <ClientCarousel />
-      {/* <section className="py-16 border-b border-border">
-        <div className="container mx-auto px-6">
-          <h3 className="text-2xl lg:text-3xl font-bold text-center mb-12">
-            Clients We Worked With
-          </h3>
-          <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20">
-            {clientLogos.map((client, index) => (
-              <div
-                key={index}
-                className="opacity-60 hover:opacity-100 transition-opacity"
-              >
-                <img
-            src={client.logo}
-            alt={client.name}
-            className="h-16 lg:h-20 object-contain"
-          />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Services Section */}
       <section className="py-20 bg-[#FFFFFF]">
@@ -180,7 +165,7 @@ const Index = () => {
               Solutions to Propel Your Mission
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -217,9 +202,9 @@ const Index = () => {
                 <div className="flex items-center justify-center w-36 h-36 hover:scale-105 transition-transform duration-300">
                   <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/eye-scan.png" alt="Vision Icon" />
                 </div>
-                <div className="text-center md:text-right">
+                <div className="text-xl text-center md:text-right">
                   <h4 className="font-semibold text-[#FFFFFF]">Vision:</h4>
-                  <p className="text-base text-[#FFFFFF]">
+                  <p className="text-[#FFFFFF]">
                     Discover what's possible through clarity, creativity, and AI insight.
                   </p>
                 </div>
@@ -228,9 +213,9 @@ const Index = () => {
                 <div className="flex items-center justify-center w-36 h-36 hover:scale-105 transition-transform duration-300">
                   <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/chip.png" alt="Execution Icon" />
                 </div>
-                <div className="text-center md:text-left">
+                <div className="text-xl text-center md:text-left">
                   <h4 className="font-semibold text-[#FFFFFF]">Execution:</h4>
-                  <p className="text-base text-[#FFFFFF]">
+                  <p className="text-[#FFFFFF]">
                     From concept to completion, we turn intelligent ideas into working
                     systems.
                   </p>
@@ -263,7 +248,7 @@ const Index = () => {
             <div className="container mx-auto px-6">
               <div className="grid grid-cols-2 md:grid-cols-4 text-center py-8">
 
-                {["AI Discovery", "AI Implementation", "Global Teams", "Tech Translation"].map((item, index) => (
+                {["AI Discovery", "AI Implementation", "Migration", "Global Teams"].map((item, index) => (
                   <div key={index} className="text-white font-semibold">
                     {item}
                   </div>
@@ -312,7 +297,7 @@ const Index = () => {
         items={[
           "Vetted Teams: Rigorously vetted, top-tier technical experts selected for skill and strategic thinking.",
           "An Airforce-inspired approach defined by discipline, structure, and a relentless focus on results.",
-          "Global strategic support for partners in the USA & KSA.",
+          "Global strategic support for partners in the USA & Middle East.",
           "A dedicated strategic partner, fully integrated with your team to achieve your objectives.",
         ]}
         buttonText="Book an Introductory Call"
@@ -340,7 +325,7 @@ const Index = () => {
             </div>
 
             <div>
-              <span className="section-badge mb-6 inline-block text-[14px] text-[#222222] bg-[#F7F7F8]">ABOUT US</span>
+              <span className="section-badge mb-6 inline-block text-[#222222] bg-[#F7F7F8]">ABOUT US</span>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                 Our Mission: Connecting Vision with Precision
               </h2>
@@ -368,6 +353,11 @@ const Index = () => {
         </div>
       </section >
 
+      {/* Clients Section */}
+      <div className="bg-[#FFFFFF]">
+        <hr className="w-[80%] mx-auto" />
+        <ClientCarousel />
+      </div>
       {/* CTA Section */}
       <CTASection
         badge="REQUEST FREE TRIAL"

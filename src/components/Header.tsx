@@ -86,7 +86,7 @@ const Header = () => {
                 </Link>
               ))}
               <Link to="/contact-us" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="btn-gradient text-sm w-full mt-2">
+                <Button className="btn-gradient text-sm w-full mt-2 transition-transform hover:scale-105">
                   BOOK A BRIEF
                 </Button>
               </Link>

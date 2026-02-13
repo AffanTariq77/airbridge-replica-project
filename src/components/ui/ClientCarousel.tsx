@@ -11,7 +11,8 @@ const clientLogos = [
 
 export default function ClientsCarousel() {
   return (
-    <section className="py-16 border-b border-border bg-[#ffffff]">
+    <section className="py-16">
+
       <div className="container mx-auto px-6">
         <h3 className="text-2xl lg:text-3xl font-bold text-center mb-12">
           Clients We Worked With

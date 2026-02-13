@@ -15,28 +15,40 @@ import {
 const Services = () => {
   const services = [
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Full-Stack Development" className="w-full h-full object-contain" />,
-      title: "Full-Stack Development",
-      description:
-        "Building durable, secure, and high-performance digital platforms, from initial front-end design to final back-end architecture.",
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="AI Engineering" className="w-16 h-16 object-contain" />,
+      title: "AI-Driven Engineering & Consulting",
+      description: "Designing secure, scalable AI solutions—combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
+      //  "Applying custom AI pipelines, automation, and Large Language Models (LLMs) to improve your operational speed and overall effectiveness.",
+      link: "/services",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="AI-Driven Engineering" className="w-full h-full object-contain" />,
-      title: "AI-Driven Engineering",
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Full-Stack" className="w-16 h-16 object-contain" />,
+      title: "LLM Cost Audit & Optimization",
       description:
-        "Applying custom AI pipelines, automation, and Large Language Models (LLMs) to improve your operational speed and overall effectiveness.",
+        "Uncovering hidden inefficiencies in your LLM stack to reduce token and model costs by up to 80% through disciplined audits, architecture optimization, and continuous performance monitoring.",
+      link: "/services",
     },
+
+    // {
+    //   icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="AI Consulting" className="w-16 h-16 object-contain" />,
+    //   title: "Strategic AI Consulting",
+    //   description:
+    //     "Providing a clear strategic plan to help you design, build, and scale your AI capabilities with a focus on security, reliability, and long-term results.",
+    //   link: "/services",
+    // },
+    // {
+    //   icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="Full-Stack" className="w-16 h-16 object-contain" />,
+    //   title: "Full-Stack Development",
+    //   description:
+    //     "Building durable, secure, and high-performance digital platforms, from initial front-end design to final back-end architecture.",
+    //   link: "/services",
+    // },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Staff Augmentation" className="w-full h-full object-contain" />,
+      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Staff Augmentation" className="w-16 h-16 object-contain" />,
       title: "Staff Augmentation",
       description:
         "Embedding our specialists within your team to provide the focused expertise needed to solve difficult problems and meet critical deadlines.",
-    },
-    {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="Strategic AI Consulting" className="w-full h-full object-contain" />,
-      title: "Strategic AI Consulting",
-      description:
-        "Providing a clear strategic plan to help you design, build, and scale your AI capabilities with a focus on security, reliability, and long-term results.",
+      link: "/services",
     },
   ];
 
@@ -68,7 +80,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[hsl(var(--brand-lavender-dark))]">
       <Header />
 
       <PageHero
@@ -80,7 +92,7 @@ const Services = () => {
       {/* Services Grid */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -95,7 +107,7 @@ const Services = () => {
       </section>
 
       {/* Engagement Protocol */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4 ">

@@ -91,7 +91,7 @@ const AboutUs = () => {
       </section >
 
       {/* Operational Model Section */}
-      < section className="py-24 bg-[hsl(var(--brand-lavender-dark))]" >
+      {/* < section className="py-24 bg-[hsl(var(--brand-lavender-dark))]" >
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-badge mb-4 inline-block bg-white shadow-sm">
@@ -117,7 +117,7 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-      </section >
+      </section > */}
 
       {/* FAQ Section */}
       < FAQSection faqs={faqs} badge="Frequently Asked Questions" />

@@ -53,7 +53,7 @@ const StrategicFocus = ({
                             )}
                             {buttonText && buttonLink && (
                                 <div className="mt-8">
-                                    <Button asChild className="btn-gradient font-bold">
+                                    <Button asChild className="btn-gradient font-bold transition-transform hover:scale-105">
                                         <Link to={buttonLink}>{buttonText}</Link>
                                     </Button>
                                 </div>
