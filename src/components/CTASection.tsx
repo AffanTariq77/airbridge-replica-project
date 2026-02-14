@@ -30,7 +30,7 @@ const CTASection = ({
         {introButtonText && (
           <div className="flex justify-center mb-16">
             <Link to={introButtonLink || "#"}>
-              <Button className="btn-gradient text-[28px] py-10 px-16 rounded-full font-bold shadow-none hover:shadow-none transition-transform hover:scale-105">
+              <Button className="btn-gradient text-[28px] py-10 px-16 rounded-full font-bold shadow-none hover:shadow-none transition-transform">
                 {introButtonText}
               </Button>
             </Link>
@@ -41,7 +41,7 @@ const CTASection = ({
           {/* LEFT SIDE (35%) */}
           <div className="lg:col-span-5 text-left">
             {badge && (
-              <span className="section-badge mb-6 text-[14px] font-bold text-[#222222] bg-[#FFFFFF] inline-block shadow-sm">
+              <span className="section-badge mb-6 font-bold text-[#222222] bg-[#FFFFFF] inline-block shadow-sm">
                 {badge}
               </span>
             )}
@@ -52,7 +52,7 @@ const CTASection = ({
               {description}
             </p>
             <Link to={buttonLink}>
-              <Button className="btn-gradient text-base px-10 py-5 rounded-full uppercase font-bold">
+              <Button className="btn-gradient text-base px-10 py-5 rounded-full font-bold transition-transform hover:scale-105">
                 {buttonText}
               </Button>
             </Link>
@@ -63,7 +63,7 @@ const CTASection = ({
 
           {/* RIGHT SIDE - Contact Form (60%) */}
           <div className="lg:col-span-6 bg-[#FFFFFF] shadow-2xl rounded-[25px] p-10 lg:p-12">
-            <h3 className="text-[25px] font-bold mb-8 text-[#000000]">
+            <h3 className="text-[35px] font-bold mb-8 text-[#000000] text-center">
               Contact Us
             </h3>
 
