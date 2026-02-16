@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
 
         <Button
-          className="btn-gradient text-sm mt-2 mx-auto block"
+          className="btn-gradient mt-2 mx-auto block font-extrabold hover:scale-105 transition-transform hover:scale-105"
           onClick={() => window.location.href = "/contact-us"}
         >
           Contact Us

@@ -17,7 +17,7 @@ const ServiceCard = ({ icon, title, description, link }: ServiceCardProps) => {
       <p className="text-muted-foreground mb-6 flex-grow">{description}</p>
       {link && (
         <Link to={link}>
-          <Button className="btn-gradient text-sm">READ MORE</Button>
+          <Button className="btn-gradient text-sm transition-transform hover:scale-105">READ MORE</Button>
         </Link>
       )}
     </div>

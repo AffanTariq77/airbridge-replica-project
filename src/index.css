@@ -138,12 +138,11 @@
     background: linear-gradient(90deg, #2710BF 0%, #B32BD1 50%, #2710BF 100%);
     background-size: 200% 100%;
     background-position: 0% 50%;
-    @apply text-white uppercase font-semibold px-10 py-4 rounded-full inline-flex items-center justify-center transition-all duration-300 ease-out hover:shadow-lg hover:shadow-primary/30 hover:scale-105;
+    @apply text-white uppercase font-semibold px-10 py-4 rounded-full inline-flex items-center justify-center transition-all duration-300 ease-out hover:shadow-lg hover:shadow-primary/30;
   }
 
   .btn-gradient:hover {
     background-position: 100% 50%;
-    transform: scale(1.05);
     box-shadow: 0 12px 25px rgba(39, 16, 191, 0.3);
   }
 
@@ -164,7 +163,7 @@
 
   /* Section Badge/Tag */
   .section-badge {
-    @apply inline-block px-[20px] py-[15px] text-sm font-bold tracking-wider uppercase rounded-full bg-background;
+    @apply inline-block px-[20px] py-[15px] text-sm font-bold tracking-wider uppercase rounded-full bg-background text-[1.1rem];
   }
 
   /* FAQ Accordion Style */

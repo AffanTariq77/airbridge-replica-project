@@ -119,10 +119,10 @@ const ContactUs = () => {
 
       {/* Main Contact CTA with Form */}
       <CTASection
-        badge="Initiate Your Mission Briefing"
-        title="Command Strategic Deployment"
-        description="Whether you have a defined objective or are in the early stages of strategic planning, we're ready to engage. Use this form to outline your requirements, and our command team will be in touch."
-        buttonText="TRANSMIT MESSAGE"
+        badge="REQUEST FREE TRIAL"
+        title=""
+        description="Learn more about our strategic approach and the solutions we deploy to ensure the success of our partners."
+        buttonText="VIEW OUR SERVICES"
         buttonLink="#"
         introButtonText="EXPLORE OUR CAPABILITIES"
         introButtonLink="#"
