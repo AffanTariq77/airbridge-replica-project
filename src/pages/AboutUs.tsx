@@ -5,6 +5,7 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const AboutUs = () => {
   const values = ["Precision", "Discipline", "Integrity", "Innovation"];
@@ -80,44 +81,24 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Video/Animation Section Placeholder */}
-      <section className="py-12">
-        <div className="container mx-auto px-6">
-          <div className="bg-gradient-primary rounded-3xl aspect-video max-w-4xl mx-auto overflow-hidden relative">
-          </div>
-        </div>
-        {/* Decorative Accent */}
-        <div className="absolute -z-10 -bottom-6 -right-6 w-full h-full border-2 border-primary/20 rounded-3xl" />
-      </section >
+  
 
       {/* Operational Model Section */}
-      < section className="py-24 bg-[hsl(var(--brand-lavender-dark))]" >
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="section-badge mb-4 inline-block bg-white shadow-sm">
-              OPERATIONAL EXCELLENCE
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-purple-600 via-blue-500 to-cyan-400">
+        <AnimatedBackground />
+        <div className="container mx-auto px-6 relative z-10 flex justify-center items-center min-h-[500px]">
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] p-12 lg:p-16 max-w-3xl w-full text-center animate-fade-in-up">
+            <span className="inline-block bg-gray-100 text-gray-800 px-6 py-2 rounded-full font-semibold tracking-widest text-xs mb-6">
+              OPERATIONAL MODEL
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary">
-              The Airbridge Operational Model
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="service-card bg-white border-none shadow-lg">
-                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-xl mb-6 mx-auto">
-                  0{index + 1}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{value}</h3>
-                <p className="text-sm text-muted-foreground">
-                  Our commitment to {value.toLowerCase()} ensures your project remains
-                  on target and resilient against all challenges.
-                </p>
-              </div>
-            ))}
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-gray-900 leading-tight">Your Global Strategic Advantage</h2>
+            <p className="text-gray-700 text-base lg:text-lg leading-relaxed mb-0">
+              Our unique structure connects elite technical talent from our operational hub in Pakistan with partners globally, particularly in the USA & KSA. This model provides access to a deep pool of vetted experts, ensures cost-effectiveness, and offers dedicated support designed for seamless cross-border collaboration.<br />
+              <span className="font-bold text-gray-900">Experience the power</span> of a truly global, integrated team.
+            </p>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* FAQ Section */}
       < FAQSection faqs={faqs} badge="Frequently Asked Questions" />
