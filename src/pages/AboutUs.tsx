@@ -40,38 +40,45 @@ const AboutUs = () => {
       />
 
       {/* Mission Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 relative group cursor-pointer">
-              <img
-                src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-About_img-4.png"
-                alt="AI Innovation Visualization"
-                className="w-full max-w-lg mx-auto"
-              />
-              <img
-                src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-over_img-4.png"
-                alt="Technology Network"
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-full object-contain pointer-events-none transition-transform duration-500 group-hover:scale-105"
-              />
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+            {/* Image - shown first on mobile, first on desktop */}
+            <div className="order-1 lg:order-1 w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none">
+              <div className="relative w-full aspect-square">
+                {/* Base image */}
+                <img
+                  src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-About_img-4.png"
+                  alt="AI Innovation Visualization"
+                  className="w-full h-full object-contain"
+                />
+                {/* Overlay animated image */}
+                <img
+                  src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-over_img-4.png"
+                  alt="Technology Network"
+                  className="absolute inset-0 w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+                />
+              </div>
             </div>
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            
+            {/* Text Content - shown second on mobile, second on desktop */}
+            <div className="order-2 lg:order-2">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
                 Our Mission: Connecting Vision with Precision
               </h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
                 Airbridge Devs is founded on a core engineering principle: the
                 "airbridge," which creates a direct and reliable connection for
                 delivering critical capabilities.
               </p>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed">
                 Guided by our founder's ex-Airforce background, our culture of
                 discipline, structure, and operational excellence is precisely how we
                 turn ambitious goals into measurable results.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {values.map((value, index) => (
-                  <div key={index} className="value-item">
+                  <div key={index} className="value-item text-sm sm:text-base">
                     {value}
                   </div>
                 ))}
@@ -84,18 +91,27 @@ const AboutUs = () => {
   
 
       {/* Operational Model Section */}
-      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-purple-600 via-blue-500 to-cyan-400">
-        <AnimatedBackground />
-        <div className="container mx-auto px-6 relative z-10 flex justify-center items-center min-h-[500px]">
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] p-12 lg:p-16 max-w-3xl w-full text-center animate-fade-in-up">
-            <span className="inline-block bg-gray-100 text-gray-800 px-6 py-2 rounded-full font-semibold tracking-widest text-xs mb-6">
-              OPERATIONAL MODEL
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-gray-900 leading-tight">Your Global Strategic Advantage</h2>
-            <p className="text-gray-700 text-base lg:text-lg leading-relaxed mb-0">
-              Our unique structure connects elite technical talent from our operational hub in Pakistan with partners globally, particularly in the USA & KSA. This model provides access to a deep pool of vetted experts, ensures cost-effectiveness, and offers dedicated support designed for seamless cross-border collaboration.<br />
-              <span className="font-bold text-gray-900">Experience the power</span> of a truly global, integrated team.
-            </p>
+      <section className="relative w-full overflow-hidden bg-gradient-to-br from-purple-600 via-blue-500 to-cyan-400">
+        <div className="absolute inset-0 z-0">
+          <AnimatedBackground />
+        </div>
+        <div className="relative z-20 w-full min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex items-center justify-center px-4 py-8 sm:py-12 md:py-16 lg:py-20">
+          <div className="w-full max-w-[calc(100%-1rem)] sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto">
+            <div className="bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-xl p-5 sm:p-8 md:p-12 lg:p-16 text-center backdrop-blur-sm">
+              <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                <span className="inline-block bg-gray-100 text-gray-800 px-3 sm:px-4 md:px-6 py-1 sm:py-1.5 rounded-full font-semibold tracking-widest text-[9px] sm:text-[10px] md:text-xs uppercase">
+                  OPERATIONAL MODEL
+                </span>
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+                  Your Global Strategic Advantage
+                </h2>
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed max-w-prose mx-auto">
+                  Our unique structure connects elite technical talent from our operational hub in Pakistan with partners globally, particularly in the USA & KSA. This model provides access to a deep pool of vetted experts, ensures cost-effectiveness, and offers dedicated support designed for seamless cross-border collaboration.
+                  {" "}
+                  <span className="font-bold text-gray-900">Experience the power</span> of a truly global, integrated team.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

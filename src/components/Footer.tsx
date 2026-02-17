@@ -117,47 +117,33 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-[#EEEEEE] bg-[#00296b]">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 py-5 sm:py-6">
+          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-4 lg:gap-8">
+            <span className="text-xs sm:text-sm text-[#FFFFFF] font-medium text-center lg:text-left break-words">
+              Copyright © {new Date().getFullYear()} Airbridge Devs | All rights reserved.
+            </span>
+            
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-8">
+              <a
+                href="mailto:info@airbridgedevs.com"
+                className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium hover:text-primary transition-colors"
+              >
+                <Mail className="w-4 h-4 flex-shrink-0 text-[#FFFFFF] hover:text-primary transition-colors" />
+                <span className="break-all">info@airbridgedevs.com</span>
+              </a>
+              
+              <a
+                href="tel:+16282625009"
+                className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium hover:text-primary transition-colors"
+              >
+                <Phone className="w-4 h-4 flex-shrink-0 text-[#FFFFFF] hover:text-primary transition-colors" />
+                <span className="whitespace-nowrap">+1 628 262 5009</span>
+              </a>
 
-          <span className="text-sm text-[#FFFFFF] font-medium">
-            Copyright © {new Date().getFullYear()} Airbridge Devs | All rights reserved.
-          </span>
-          <div className="flex items-center gap-8">
-            {/* <a
-              href="https://www.linkedin.com/company/airbridgedevs"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Airbridge Devs LinkedIn"
-              className="flex items-center gap-2 text-white/80 hover:text-primary transition-colors text-base font-medium"
-            >
-              <div className="bg-primary/50 p-3 rounded-full"> 
-              <Linkedin className="w-4 h-4 text-[#FFFFFF] hover:text-primary transition-colors" />
-               </div> 
-            </a>*/}
-            <a
-              href="mailto:info@airbridgedevs.com"
-              className="flex items-center gap-2 text-white/80 text-xs font-medium hover:text-primary transition-colors text-base font-medium"
-            >
-              {/* <div className="bg-primary/50 p-3 rounded-full"> */}
-              <Mail className="w-4 h-4 text-[#FFFFFF] hover:text-primary transition-colors" />
-              <span className="inline-block self-center">info@airbridgedevs.com</span>
-              {/* </div> */}
-            </a>
-            <a
-              href="tel:+16282625009"
-              className="flex items-center gap-2 text-white/80 text-xs font-medium hover:text-primary transition-colors text-base font-medium"
-            >
-              {/* <div className="bg-primary/50 p-3 rounded-full"> */}
-              <Phone className="w-4 h-4 text-[#FFFFFF] hover:text-primary transition-colors" />
-              <span className="inline-block self-center">+1 628 262 5009</span>
-              {/* </div> */}
-            </a>
-
-            <div className="flex items-center gap-2 text-white/80 text-xs font-medium">
-              {/* <div className="bg-primary/50 p-3 rounded-full"> */}
-              <MapPin className="w-4 h-4 text-[#FFFFFF] hover:text-primary transition-colors" />
-              {/* </div> */}
-              <span className="inline-block self-center">20A Tanjong Pagar Road, Singapore 088443</span>
+              <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-medium text-center sm:text-left">
+                <MapPin className="w-4 h-4 flex-shrink-0 text-[#FFFFFF]" />
+                <span className="break-words max-w-[280px] sm:max-w-none">20A Tanjong Pagar Road, Singapore 088443</span>
+              </div>
             </div>
           </div>
         </div>

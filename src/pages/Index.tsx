@@ -180,7 +180,7 @@ const Index = () => {
       </section>
 
       {/* Vision to Execution Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative min-h-[650px] sm:min-h-[700px] md:min-h-[700px] lg:min-h-[800px]">
         <div className="
         absolute inset-0 
         bg-secondary 
@@ -191,69 +191,52 @@ const Index = () => {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-[#31303f]/60" />
 
-        <div className="container mx-auto px-6 relative z-10 py-32">
-          <div className="text-center mb-16">
-            <h2 className="text-[80px] lg:text-[80px] font-medium mb-8 text-[#FFFFFF]">
-              Bridging the Gap from <br className="hidden sm:block" />
-              Vision to Execution
-            </h2>
-            <div className="grid md:grid-cols-2 gap-20 lg:gap-32 max-w-4xl mx-auto mb-12 mt-12">
-              <div className="flex flex-col items-center md:items-end gap-8">
-                <div className="flex items-center justify-center w-36 h-36 hover:scale-105 transition-transform duration-300">
-                  <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/eye-scan.png" alt="Vision Icon" />
-                </div>
-                <div className="text-xl text-center md:text-right">
-                  <h4 className="font-semibold text-[#FFFFFF]">Vision:</h4>
-                  <p className="text-[#FFFFFF]">
-                    Discover what's possible through clarity, creativity, and AI insight.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center md:items-start gap-8">
-                <div className="flex items-center justify-center w-36 h-36 hover:scale-105 transition-transform duration-300">
-                  <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/chip.png" alt="Execution Icon" />
-                </div>
-                <div className="text-xl text-center md:text-left">
-                  <h4 className="font-semibold text-[#FFFFFF]">Execution:</h4>
-                  <p className="text-[#FFFFFF]">
-                    From concept to completion, we turn intelligent ideas into working
-                    systems.
-                  </p>
+        <div className="relative z-10 min-h-[650px] sm:min-h-[700px] md:min-h-[700px] lg:min-h-[800px] flex flex-col justify-between">
+          <div className="flex-1 flex items-center py-10 sm:py-16 md:py-24 lg:py-32">
+            <div className="container mx-auto px-4 sm:px-6">
+              <div className="text-center w-full max-w-5xl mx-auto">
+                <h2 className="text-[26px] xxs:text-[28px] xs:text-3xl sm:text-4xl md:text-5xl lg:text-[80px] font-medium mb-10 sm:mb-12 md:mb-16 text-[#FFFFFF] leading-[1.3] px-2">
+                  Bridging the Gap from <br className="hidden sm:block" />
+                  Vision to Execution
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12 md:gap-16 lg:gap-32">
+                  <div className="flex flex-col items-center sm:items-end gap-4 sm:gap-6 md:gap-8">
+                    <div className="flex items-center justify-center w-16 h-16 xs:w-20 xs:h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 hover:scale-105 transition-transform duration-300">
+                      <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/eye-scan.png" alt="Vision Icon" className="w-full h-full object-contain" />
+                    </div>
+                    <div className="text-sm xs:text-base sm:text-base md:text-lg lg:text-xl text-center sm:text-right px-3 sm:px-0 max-w-[280px] xs:max-w-xs sm:max-w-none mx-auto">
+                      <h4 className="font-semibold text-[#FFFFFF] mb-2 text-base xs:text-lg sm:text-xl">Vision:</h4>
+                      <p className="text-[#FFFFFF] leading-relaxed">
+                        Discover what's possible through clarity, creativity, and AI insight.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center sm:items-start gap-4 sm:gap-6 md:gap-8">
+                    <div className="flex items-center justify-center w-16 h-16 xs:w-20 xs:h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 hover:scale-105 transition-transform duration-300">
+                      <img src="http://airbridgedevs.com/wp-content/uploads/2025/10/chip.png" alt="Execution Icon" className="w-full h-full object-contain" />
+                    </div>
+                    <div className="text-sm xs:text-base sm:text-base md:text-lg lg:text-xl text-center sm:text-left px-3 sm:px-0 max-w-[280px] xs:max-w-xs sm:max-w-none mx-auto">
+                      <h4 className="font-semibold text-[#FFFFFF] mb-2 text-base xs:text-lg sm:text-xl">Execution:</h4>
+                      <p className="text-[#FFFFFF] leading-relaxed">
+                        From concept to completion, we turn intelligent ideas into working
+                        systems.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {["AI Discovery", "AI Implementation", "Global Teams", "Tech Translation"].map(
-              (item, index) => (
-                <div
-                  key={index}
-                  className="bg-card p-6 rounded-2xl text-center border border-border hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-12 h-12 rounded-full bg-gradient-primary mx-auto mb-4 flex items-center justify-center">
-                    {index === 0 && <Eye className="w-6 h-6 text-white" />}
-                    {index === 1 && <Cpu className="w-6 h-6 text-white" />}
-                    {index === 2 && <Globe className="w-6 h-6 text-white" />}
-                    {index === 3 && <MessageSquare className="w-6 h-6 text-white" />}
-                  </div>
-                  <h4 className="font-semibold">{item}</h4>
-                </div>
-              )
-            )}
-          </div> */}
-
-          {/* Bottom Footer Strip */}
-          <div className="absolute bottom-0 left-0 w-full bg-[#dddddd30] backdrop-blur-sm">
-            <div className="container mx-auto px-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 text-center py-8">
-
-                {["AI Discovery", "AI Implementation", "Migration", "Global Teams"].map((item, index) => (
-                  <div key={index} className="text-white font-semibold">
+          {/* Bottom Footer Strip - at the bottom */}
+          <div className="w-full ">
+            <div className="container bg-[#5a5968]/80 mx-auto px-4 sm:px-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 text-center py-5 sm:py-5 md:py-6 lg:py-8 gap-y-2 md:gap-y-0">
+                {["AI Discovery", "AI Implementation", "Global Teams", "Tech Translation"].map((item, index) => (
+                  <div key={index} className="text-white font-semibold text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base px-2">
                     {item}
                   </div>
                 ))}
-
               </div>
             </div>
           </div>
@@ -262,13 +245,13 @@ const Index = () => {
       </section >
 
       {/* AI Approach Section */}
-      < section className="py-24 bg-white animde-fade-in-up" >
-        <div className="container max-w-[1300px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-            <div className="flex flex-col gap-6 lg:pr-6">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-24 bg-white">
+        <div className="container max-w-[1300px] mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-start">
+            <div className="flex flex-col gap-6 lg:pr-6 mb-4 md:mb-0">
               <span className="section-badge w-fit inline-block">OUR APPROACH TO AI</span>
 
-              <h3 className="text-3xl lg:text-4xl font-normal leading-tight">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal leading-tight break-words">
                 We treat LLM integration as the starting point for a larger AI strategy
                 that builds a lasting, competitive advantage
               </h3>

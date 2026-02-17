@@ -1,0 +1,343 @@
+/* Native Mobile Experience CSS */
+/* This file contains iOS and Android specific optimizations */
+
+/* iOS specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+  /* Smooth momentum scrolling */
+  body,
+  .overflow-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better font rendering on iOS */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Disable iOS callout menu on long press */
+  * {
+    -webkit-touch-callout: none;
+  }
+
+  /* Allow text selection only where needed */
+  p, span, h1, h2, h3, h4, h5, h6 {
+    -webkit-touch-callout: default;
+  }
+}
+
+/* iOS notch/safe area support */
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Critical mobile fixes */
+@media screen and (max-width: 768px) {
+  /* Absolute positioning fixes */
+  section {
+    position: relative;
+    isolation: isolate;
+  }
+  
+  /* Ensure z-index stacking works properly */
+  [class*="z-0"] {
+    z-index: 0;
+  }
+  
+  [class*="z-10"],
+  [class*="z-20"] {
+    z-index: 20;
+    position: relative;
+  }
+  
+  /* Force solid backgrounds on mobile */
+  .bg-white {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+  }
+  
+  /* Better backdrop-filter for old devices */
+  .backdrop-blur-sm,
+  .backdrop-blur-md {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+  }
+  
+  /* Remove iOS input zoom */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+  
+  /* Critical layout fixes - allow scrolling */
+  html,
+  body {
+    max-width: 100vw !important;
+    position: relative;
+  }
+  
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Force responsive images */
+  img, svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Better text rendering on small screens */
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Prevent horizontal overflow on mobile */
+  section,
+  div,
+  main {
+    max-width: 100vw;
+  }
+  
+  /* Ensure viewport units work correctly */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Reduce animation intensity on mobile */
+  svg circle {
+    opacity: 0.5 !important;
+  }
+}
+
+/* Mobile-specific card adjustments */
+@media screen and (max-width: 640px) {
+  /* Force proper card background */
+  .bg-white {
+    background: #ffffff !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Better spacing */
+  .space-y-4 > * + * {
+    margin-top: 1rem !important;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1.5rem !important;
+  }
+  
+  /* Ensure readable text */
+  p {
+    font-size: clamp(0.875rem, 3.5vw, 1rem) !important;
+    line-height: 1.6 !important;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+    line-height: 1.25 !important;
+  }
+  
+  /* Remove any transform that might cause overflow */
+  .will-change-transform {
+    will-change: auto !important;
+  }
+}
+
+/* Ultra-responsive for very small screens */
+@media screen and (max-width: 375px) {
+  /* Compact everything */
+  .p-6 {
+    padding: 1.25rem !important;
+  }
+  
+  .px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .py-12 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Tighter text */
+  h2 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem) !important;
+  }
+  
+  p {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Android specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
+  /* Better scrolling on Android */
+  body {
+    overflow-scrolling: touch;
+  }
+}
+
+/* Disable pull-to-refresh on Chrome mobile */
+body {
+  overscroll-behavior-y: contain;
+}
+
+/* Better touch feedback */
+button,
+a,
+[role="button"] {
+  -webkit-tap-highlight-color: rgba(168, 85, 247, 0.1);
+  tap-highlight-color: rgba(168, 85, 247, 0.1);
+  transition: transform 0.1s ease;
+}
+
+button:active,
+a:active,
+[role="button"]:active {
+  transform: scale(0.98);
+}
+
+/* Improve performance with GPU acceleration */
+.animate-fade-in-up,
+.animate-mobile-gradient,
+.will-change-transform {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Better video performance on mobile */
+video,
+iframe {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* Optimize SVG rendering */
+svg {
+  shape-rendering: geometricPrecision;
+}
+
+/* Native-like scrolling behavior */
+.scroll-smooth {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improve touch responsiveness */
+* {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+/* Prevent zoom on double-tap */
+a,
+button {
+  touch-action: manipulation;
+}
+
+/* Better backdrop-filter for mobile */
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
+  }
+}
+
+/* Optimize for OLED displays */
+@media (prefers-color-scheme: dark) {
+  .bg-white\/96 {
+    background-color: rgba(255, 255, 255, 0.96);
+  }
+}
+
+/* Better focus handling for mobile */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.3);
+}
+
+/* Optimize animations for 60fps */
+@keyframes optimizedFadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Native app-like appearance */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Improve legibility on small screens */
+@media (max-width: 640px) {
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Landscape mode optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+  .py-12 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .min-h-\[420px\] {
+    min-height: 280px !important;
+  }
+}
+
+/* Tablet landscape optimization */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+/* High refresh rate displays (120Hz+) */
+@media (min-resolution: 120dpi) {
+  .animate-fade-in-up,
+  .animate-mobile-gradient {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Better loading states for slow connections */
+.lazy-load {
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+}
+
+/* Optimize for variable fonts */
+@supports (font-variation-settings: normal) {
+  body {
+    font-variant-ligatures: common-ligatures;
+    font-feature-settings: "kern" 1;
+  }
+}

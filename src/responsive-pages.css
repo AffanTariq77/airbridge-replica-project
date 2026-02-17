@@ -1,0 +1,402 @@
+/* ============================================
+   COMPREHENSIVE MOBILE RESPONSIVE STYLES
+   FOR ALL PAGES
+   ============================================ */
+
+/* Base mobile optimizations */
+@media (max-width: 1024px) {
+  /* Hero sections */
+  section[class*="py-20"],
+  section[class*="py-24"],
+  section[class*="py-32"] {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Container padding */
+  .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Grid responsive */
+  .grid {
+    gap: 1.5rem !important;
+  }
+  
+  /* Typography scaling */
+  h1 {
+    font-size: clamp(1.875rem, 8vw, 3rem) !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+    line-height: 1.25 !important;
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 5vw, 1.875rem) !important;
+  }
+  
+  p {
+    font-size: clamp(0.875rem, 3.5vw, 1rem) !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 640px) {
+  /* Hero sections - ultra compact */
+  section[class*="py-"] {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Remove floating decorations on mobile */
+  .animate-float,
+  .absolute.animate-float {
+    display: none !important;
+  }
+  
+  /* Hide desktop-only images */
+  .hidden.lg\\:block {
+    display: none !important;
+  }
+  
+  /* Force single column grids */
+  .grid.md\\:grid-cols-2,
+  .grid.lg\\:grid-cols-2,
+  .grid.lg\\:grid-cols-3,
+  .grid.md\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Compact containers */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Service cards */
+  .service-card,
+  .contact-card,
+  [class*="card"] {
+    padding: 1.25rem !important;
+  }
+  
+  /* Buttons */
+  .btn-gradient,
+  button,
+  .button {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.875rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+  
+  /* Images responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Text overflow prevention */
+  * {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Paragraphs and text */
+  p, span, a, li {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Gap reductions */
+  .gap-8,
+  .gap-12,
+  .gap-16 {
+    gap: 1rem !important;
+  }
+  
+  /* Margin reductions */
+  .mb-6,
+  .mb-8,
+  .mb-12,
+  .mb-16 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .mt-6,
+  .mt-8,
+  .mt-12 {
+    margin-top: 1rem !important;
+  }
+  
+  /* Max width constraints */
+  .max-w-xl,
+  .max-w-2xl,
+  .max-w-3xl,
+  .max-w-4xl {
+    max-width: 100% !important;
+  }
+  
+  /* Center text on mobile */
+  section > .container > div:first-child {
+    text-align: center;
+  }
+  
+  /* Fix absolute positioning issues */
+  .absolute[class*="top-"],
+  .absolute[class*="bottom-"],
+  .absolute[class*="left-"],
+  .absolute[class*="right-"] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 375px) {
+  html {
+    font-size: 14px !important;
+  }
+  
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  section[class*="py-"] {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .service-card,
+  .contact-card {
+    padding: 1rem !important;
+  }
+  
+  .btn-gradient,
+  button {
+    padding: 0.625rem 1.25rem !important;
+    font-size: 0.8125rem !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* 2-column grids */
+  .grid.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  /* Better spacing */
+  section[class*="py-"] {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+  
+  .container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  section[class*="py-"] {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .min-h-screen {
+    min-height: auto !important;
+  }
+}
+
+/* Contact page specific */
+@media (max-width: 640px) {
+  .contact-card {
+    text-align: center;
+  }
+  
+  .contact-card .w-20 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Services/phases cards */
+@media (max-width: 640px) {
+  .phase-card,
+  [class*="phase-"] {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .phase-card img {
+    width: 100% !important;
+    max-width: 300px;
+    margin: 0 auto 1rem auto;
+  }
+}
+
+/* Client carousel */
+@media (max-width: 640px) {
+  .client-carousel,
+  [class*="carousel"] {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Strategic focus sections */
+@media (max-width: 640px) {
+  .strategic-focus,
+  [class*="strategic"] {
+    padding: 1.5rem !important;
+  }
+  
+  .strategic-focus h2 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* FAQ sections */
+@media (max-width: 640px) {
+  .faq-item,
+  [class*="accordion"] {
+    padding: 1rem !important;
+  }
+}
+
+/* Form inputs */
+@media (max-width: 640px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents iOS zoom */
+    padding: 0.75rem !important;
+  }
+  
+  form {
+    width: 100% !important;
+  }
+}
+
+/* Badge/label elements */
+@media (max-width: 640px) {
+  .section-badge,
+  [class*="badge"] {
+    font-size: 0.625rem !important;
+    padding: 0.375rem 0.75rem !important;
+  }
+}
+
+/* Stats/numbers sections */
+@media (max-width: 640px) {
+  .stat-item,
+  [class*="stat"] {
+    padding: 1rem !important;
+  }
+  
+  .stat-number {
+    font-size: 2rem !important;
+  }
+}
+
+/* CTA sections */
+@media (max-width: 640px) {
+  .cta-section,
+  [class*="cta"] {
+    padding: 2rem 1rem !important;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .cta-section .btn-gradient {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Implementation steps / process cards */
+@media (max-width: 640px) {
+  .step-card,
+  .implementation-card {
+    padding: 1.25rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .step-icon,
+  [class*="icon"] {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+/* Logo grids */
+@media (max-width: 640px) {
+  .logo-grid,
+  [class*="logo"] img {
+    max-width: 120px !important;
+    height: auto !important;
+  }
+}
+
+/* Background overlays */
+@media (max-width: 640px) {
+  .bg-cover {
+    background-attachment: scroll !important;
+  }
+  
+  [class*="brightness-"],
+  [class*="filter"] {
+    filter: brightness(0.6) !important;
+  }
+}
+
+/* Z-index management */
+.relative {
+  isolation: isolate;
+}
+
+[class*="z-0"] {
+  z-index: 0;
+}
+
+[class*="z-10"] {
+  z-index: 10;
+}
+
+[class*="z-20"] {
+  z-index: 20;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}

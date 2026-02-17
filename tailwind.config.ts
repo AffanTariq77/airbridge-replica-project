@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      screens: {
+        'xs': '375px',
+        'xxs': '320px',
+      },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
