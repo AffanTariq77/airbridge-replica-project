@@ -1,0 +1,23 @@
+@media (max-width: 640px) {
+  .step-icon,
+  .ai-operation-card-icon,
+  .phase-icon {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    min-height: 64px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .step-icon,
+  .ai-operation-card-icon,
+  .phase-icon {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+  }
+}

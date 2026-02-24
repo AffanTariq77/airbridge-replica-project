@@ -1,0 +1,19 @@
+@media (max-width: 640px) {
+  .phase-number {
+    font-size: 3rem !important;
+    line-height: 1 !important;
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .phase-number {
+    font-size: 2.2rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .phase-number {
+    font-size: 1.7rem !important;
+  }
+}

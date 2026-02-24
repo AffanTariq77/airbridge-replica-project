@@ -19,7 +19,7 @@ const Index = () => {
     {
       icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="AI Engineering" className="w-16 h-16 object-contain" />,
       title: "AI-Driven Engineering & Consulting",
-      description: "Designing secure, scalable AI solutions—combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
+      description: "Designing secure, scalable AI solutions combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
       //  "Applying custom AI pipelines, automation, and Large Language Models (LLMs) to improve your operational speed and overall effectiveness.",
       link: "/services",
     },
@@ -232,7 +232,7 @@ const Index = () => {
           <div className="w-full ">
             <div className="container bg-[#5a5968]/80 mx-auto px-4 sm:px-6">
               <div className="grid grid-cols-2 md:grid-cols-4 text-center py-5 sm:py-5 md:py-6 lg:py-8 gap-y-2 md:gap-y-0">
-                {["AI Discovery", "AI Implementation", "Global Teams", "Tech Translation"].map((item, index) => (
+                {["AI Discovery", "AI Implementation", "Tech Migration", "Global Teams"].map((item, index) => (
                   <div key={index} className="text-white font-semibold text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base px-2">
                     {item}
                   </div>

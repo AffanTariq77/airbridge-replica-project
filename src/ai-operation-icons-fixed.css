@@ -1,0 +1,14 @@
+/* Prevent shrinking of icons in AI implementation steps on all screens */
+.ai-operation-card-icon {
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  min-height: 64px !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

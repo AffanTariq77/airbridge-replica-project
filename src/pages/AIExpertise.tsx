@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import "../ai-operation-icons-fixed.css";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import FAQSection from "@/components/FAQSection";

@@ -24,7 +24,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
 
-            <img src="https://airbridgedevs.com/wp-content/uploads/2025/10/cropped-air-bridg-g.png" alt="" />
+            <img src="/images/airbridge-logo.png" alt="Airbridge Devs Logo" />
             {/* <span className="text-2xl font-bold tracking-tight">
               <span className="text-foreground">AIR</span>
               <span className="text-primary">BRIDGE</span>

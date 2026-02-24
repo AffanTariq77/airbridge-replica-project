@@ -17,7 +17,7 @@ const Services = () => {
     {
       icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="AI Engineering" className="w-16 h-16 object-contain" />,
       title: "AI-Driven Engineering & Consulting",
-      description: "Designing secure, scalable AI solutions—combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
+      description: "Designing secure, scalable AI solutions combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
       //  "Applying custom AI pipelines, automation, and Large Language Models (LLMs) to improve your operational speed and overall effectiveness.",
       link: "/services",
     },
@@ -122,11 +122,10 @@ const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {phases.map((phase, index) => (
               <div key={index} className="phase-card h-full flex flex-col p-2">
-                <div className="p-3">
-                  <div
-                    className="h-32 bg-cover bg-center rounded-xl"
-                    style={{ backgroundImage: `url(${phase.image})` }}
-                  />
+                <div className="p-3 flex items-center justify-center">
+                  <div className="phase-number text-[4rem] font-extrabold  mb-4 select-none">
+                    {index + 1}
+                  </div>
                 </div>
                 <div className="px-6 pb-8 pt-2 flex-grow">
                   <h3 className="text-lg font-bold mb-3">{phase.phase}</h3>
