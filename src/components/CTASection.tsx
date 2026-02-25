@@ -41,9 +41,11 @@ const CTASection = ({
           {/* LEFT SIDE (35%) */}
           <div className="lg:col-span-5 text-left">
             {badge && (
-              <span className="section-badge mb-4 md:mb-6 font-bold text-[#222222] bg-[#FFFFFF] inline-block shadow-sm text-xs md:text-sm break-words">
-                {badge}
-              </span>
+              <div className="flex justify-center md:justify-start">
+                <span className="section-badge mb-4 md:mb-6 font-bold text-[#222222] bg-[#FFFFFF] inline-block shadow-sm text-xs md:text-sm break-words">
+                  {badge}
+                </span>
+              </div>
             )}
             <h2 className="text-2xl md:text-3xl lg:text-[35px] font-bold mb-4 md:mb-6 leading-[1.3] text-[#000000] break-words overflow-wrap-anywhere">
               {title}
@@ -51,11 +53,13 @@ const CTASection = ({
             <p className="text-[#222222]/80 max-w-xl mb-6 md:mb-8 text-sm md:text-base lg:text-lg leading-relaxed break-words overflow-wrap-anywhere">
               {description}
             </p>
-            <Link to={buttonLink}>
-              <Button className="btn-gradient text-base px-10 py-5 rounded-full font-bold transition-transform hover:scale-105">
-                {buttonText}
-              </Button>
-            </Link>
+            <div className="flex justify-center md:justify-start">
+              <Link to={buttonLink}>
+                <Button className="btn-gradient text-base px-10 py-5 rounded-full font-bold transition-transform hover:scale-105">
+                  {buttonText}
+                </Button>
+              </Link>
+            </div>
           </div>
 
           {/* SPACE (5%) */}

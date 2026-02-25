@@ -249,7 +249,7 @@ const Index = () => {
         <div className="container max-w-[1300px] mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-start">
             <div className="flex flex-col gap-6 lg:pr-6 mb-4 md:mb-0">
-              <span className="section-badge w-fit inline-block">OUR APPROACH TO AI</span>
+              <span className="section-badge w-fit inline-block mx-auto md:mx-0">OUR APPROACH TO AI</span>
 
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal leading-tight break-words">
                 We treat LLM integration as the starting point for a larger AI strategy
