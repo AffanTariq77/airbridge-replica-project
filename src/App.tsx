@@ -4,7 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import StaffAugmentation from "./pages/staff-augmentation";
 import Services from "./pages/Services";
+import AIDrivenEngineeringAndConsulting from "./pages/AI-Driven-Engineering-&-Consulting";
 import AIExpertise from "./pages/AIExpertise";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
@@ -21,6 +23,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/ai-driven-engineering-and-consulting" element={<AIDrivenEngineeringAndConsulting />} />
+          <Route path="/services/staff-augmentation" element={<StaffAugmentation />} />
           <Route path="/ai-expertise" element={<AIExpertise />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />

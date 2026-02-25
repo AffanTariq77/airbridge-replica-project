@@ -5,17 +5,19 @@ interface PageHeroProps {
   subtitle?: string;
   badge?: string;
   backgroundImage?: string;
+  backgroundPosition?: string;
   children?: ReactNode;
 }
 
-const PageHero = ({ title, subtitle, badge, backgroundImage, children }: PageHeroProps) => {
+const PageHero = ({ title, subtitle, badge, backgroundImage, backgroundPosition = 'center center', children }: PageHeroProps) => {
   return (
     <section
       className="page-hero-bg relative py-20 lg:py-28 overflow-hidden"
       style={backgroundImage ? {
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center center'
+        backgroundPosition: backgroundPosition,
+        backgroundRepeat: 'no-repeat'
       } : {}}
     >
       {/* Decorative Elements */}

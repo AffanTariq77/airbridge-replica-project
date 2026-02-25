@@ -19,7 +19,7 @@ const Services = () => {
       title: "AI-Driven Engineering & Consulting",
       description: "Designing secure, scalable AI solutions combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
       //  "Applying custom AI pipelines, automation, and Large Language Models (LLMs) to improve your operational speed and overall effectiveness.",
-      link: "/services",
+      link: "/services/ai-driven-engineering-and-consulting",
     },
     {
       icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Full-Stack" className="w-16 h-16 object-contain" />,
@@ -48,7 +48,7 @@ const Services = () => {
       title: "Staff Augmentation",
       description:
         "Embedding our specialists within your team to provide the focused expertise needed to solve difficult problems and meet critical deadlines.",
-      link: "/services",
+      link: "/services/staff-augmentation",
     },
   ];
 

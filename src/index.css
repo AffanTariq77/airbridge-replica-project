@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
   /* Faster animation for mobile */
   @media (max-width: 767px) {
     .animate-marquee-fast {
       animation: marquee 8s linear infinite;
     }
   }
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
