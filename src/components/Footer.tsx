@@ -17,12 +17,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <Button
-          className="btn-gradient mt-2 mx-auto block font-extrabold hover:scale-105 transition-transform hover:scale-105"
-          onClick={() => window.location.href = "/contact-us"}
-        >
-          Contact Us
-        </Button>
+        <Link to="/contact-us" style={{ textDecoration: 'none' }}>
+          <Button
+            className="btn-gradient mt-2 mx-auto block font-extrabold hover:scale-105 transition-transform hover:scale-105"
+          >
+            Contact Us
+          </Button>
+        </Link>
 
 
 
