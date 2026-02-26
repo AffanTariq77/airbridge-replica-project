@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { supabase } from "@/lib/supabaseClient";
+import { sendNotificationEmail } from "@/api/sendNotification";
 
 interface CTASectionProps {
   badge?: string;
@@ -20,6 +23,55 @@ const CTASection = ({
   introButtonText,
   introButtonLink,
 }: CTASectionProps) => {
+  // Form state
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  // Handle input change
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submit
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess(false);
+    // Save to Supabase (table: contact_messages)
+    const { error } = await supabase.from("contact_messages").insert([
+      {
+        first_name: form.firstName,
+        last_name: form.lastName,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      },
+    ]);
+    if (error) {
+      setLoading(false);
+      setError("Failed to submit. Please try again.");
+      return;
+    }
+    // Send notification email
+    try {
+      await sendNotificationEmail(form);
+      setSuccess(true);
+      setForm({ firstName: "", lastName: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      setError("Saved, but failed to send email notification.");
+    }
+    setLoading(false);
+  };
+
   return (
     <section className="py-12 md:py-16 lg:py-24 bg-[hsl(var(--brand-lavender-dark))] bg-[url('https://airbridgedevs.com/wp-content/uploads/2025/09/aipt-bg1-4.jpg')] bg-center bg-cover relative overflow-hidden">
       {/* Background Overlay */}
@@ -71,42 +123,60 @@ const CTASection = ({
               Contact Us
             </h3>
 
-            <form className="space-y-4 md:space-y-5">
+            <form className="space-y-4 md:space-y-5" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 <input
                   type="text"
+                  name="firstName"
                   placeholder="First Name"
+                  value={form.firstName}
+                  onChange={handleChange}
                   className="input !bg-[#F4F4F4] border-none rounded-[12px] md:rounded-[15px] h-12 md:h-14 text-sm md:text-base"
                 />
                 <input
                   type="text"
+                  name="lastName"
                   placeholder="Last Name"
+                  value={form.lastName}
+                  onChange={handleChange}
                   className="input !bg-[#F4F4F4] border-none rounded-[12px] md:rounded-[15px] h-12 md:h-14 text-sm md:text-base"
                 />
               </div>
 
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
                 required
+                value={form.email}
+                onChange={handleChange}
                 className="input w-full !bg-[#F4F4F4] border-none rounded-[12px] md:rounded-[15px] h-12 md:h-14 text-sm md:text-base"
               />
 
               <input
                 type="text"
+                name="subject"
                 placeholder="Subject"
                 required
+                value={form.subject}
+                onChange={handleChange}
                 className="input w-full !bg-[#F4F4F4] border-none rounded-[12px] md:rounded-[15px] h-12 md:h-14 text-sm md:text-base"
               />
 
               <textarea
+                name="message"
                 placeholder="Message"
                 rows={5}
+                value={form.message}
+                onChange={handleChange}
                 className="input w-full !bg-[#F4F4F4] border-none rounded-[12px] md:rounded-[15px] py-3 md:py-4 text-sm md:text-base"
               />
 
-              <Button type="submit" className="w-full h-12 md:h-14 lg:h-16 text-base md:text-lg font-bold rounded-full btn-gradient">
-                Schedule a Mission Briefing
+              {error && <div className="text-red-600 text-sm text-center">{error}</div>}
+              {success && <div className="text-green-600 text-sm text-center">Thank you! We received your message.</div>}
+
+              <Button type="submit" className="w-full h-12 md:h-14 lg:h-16 text-base md:text-lg font-bold rounded-full btn-gradient" disabled={loading}>
+                {loading ? "Submitting..." : "Schedule a Mission Briefing"}
               </Button>
             </form>
           </div>
