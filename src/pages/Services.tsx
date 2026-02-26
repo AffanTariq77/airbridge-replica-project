@@ -13,7 +13,7 @@ import {
 } from "@/components/icons/ServiceIcons";
 
 const Services = () => {
-  const services = [
+ const services = [
     {
       icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="AI Engineering" className="w-16 h-16 object-contain" />,
       title: "AI-Driven Engineering & Consulting",
@@ -99,7 +99,7 @@ const Services = () => {
                 icon={service.icon}
                 title={service.title}
                 description={service.description}
-                link="/contact-us"
+                link={service.link}
               />
             ))}
           </div>
