@@ -24,7 +24,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
 
-            <img src="/images/airbridge-logo.png" alt="Airbridge Devs Logo" />
+            <img src="/images/airbridge-logo.svg" alt="Airbridge Devs Logo" />
             {/* <span className="text-2xl font-bold tracking-tight">
               <span className="text-foreground">AIR</span>
               <span className="text-primary">BRIDGE</span>

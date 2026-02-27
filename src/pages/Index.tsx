@@ -100,33 +100,25 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden bg-[#F7F4FD]">
+      <section className="relative py-12 sm:py-16 lg:py-32 overflow-hidden bg-[#F7F4FD]">
         {/* Background Ornaments */}
-        <div className="absolute top-[20%] right-[5%] w-[180px] z-20 animate-float">
+        <div className="absolute top-[55%] right-[10%] w-[180px] z-20 animate-float">
           <img
             src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-slider3-4.png"
             alt=""
             className="w-full h-auto transition-transform duration-300 hover:-translate-y-2"
           />
         </div>
-        <div className="absolute top-[10%] left-[45%] w-[150px] z-20 animate-float delay-100">
+        <div className="absolute top-[15%] right-[10%] w-[150px] z-20 animate-float delay-100">
           <img
             src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-slider1-4.png"
             alt=""
             className="w-full h-auto transition-transform duration-300 hover:-translate-y-2"
           />
         </div>
-        <div className="absolute bottom-[15%] right-[40%] w-[120px] z-20 animate-float delay-300">
-          <img
-            src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-slider1-4.png"
-            alt=""
-            className="w-full h-auto transition-transform duration-300 hover:-translate-y-2"
-          />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-up">
+        <div className="container mx-auto px-2 sm:px-6 relative z-10 mt-0">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="animate-slide-up mt-0 mb-8 lg:mb-0">
               <span className="section-badge mb-6 inline-block text-[14px] font-bold text-[#222222] bg-[#FFFFFF] rounded-full shadow-sm">
                 INTO THE FUTURE
               </span>
