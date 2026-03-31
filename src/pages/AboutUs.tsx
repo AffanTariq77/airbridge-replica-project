@@ -3,8 +3,6 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import AnimatedBackground from "@/components/AnimatedBackground";
 
 const AboutUs = () => {
@@ -36,7 +34,7 @@ const AboutUs = () => {
       <PageHero
         title="About Us"
         subtitle="Discover how our unique background and core principles translate into reliable, high-performance solutions."
-        backgroundImage="https://airbridgedevs.com/wp-content/uploads/2025/10/breadcumb_section-4.jpg"
+        backgroundImage="/images/bg-breadcrumb.webp"
       />
 
       {/* Mission Section */}
@@ -48,13 +46,13 @@ const AboutUs = () => {
               <div className="relative w-full aspect-square">
                 {/* Base image */}
                 <img
-                  src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-About_img-4.png"
+                  src="/images/about-img.webp"
                   alt="AI Innovation Visualization"
                   className="w-full h-full object-contain"
                 />
                 {/* Overlay animated image */}
                 <img
-                  src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-over_img-4.png"
+                  src="/images/over-img.webp"
                   alt="Technology Network"
                   className="absolute inset-0 w-full h-full object-contain transition-transform duration-500 hover:scale-105"
                 />
@@ -127,7 +125,7 @@ const AboutUs = () => {
         buttonText="Discover More"
         buttonLink="/contact-us"
         introButtonText="Ready to Launch Your Next Initiative?"
-        introButtonLink="/about-us/#"
+        introButtonLink="/contact-us"
       />
 
       {/* {/* Join Our Command Section */}

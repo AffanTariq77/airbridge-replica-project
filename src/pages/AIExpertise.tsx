@@ -20,25 +20,25 @@ import StrategicFocus from "@/components/StrategicFocus";
 const AIExpertise = () => {
   const solutions = [
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="LLM Integrations" className="w-full h-full object-contain" />,
+      icon: <img src="/images/icon-llm.webp" alt="LLM Integrations" loading="lazy" decoding="async" className="w-full h-full object-contain" />,
       title: "LLM Integrations",
       description:
         "We begin by connecting the power of Large Language Models directly with your business systems, creating the essential foundation for advanced AI functionality.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="AI Guardrails" className="w-full h-full object-contain" />,
+      icon: <img src="/images/icon-ai-eng.webp" alt="AI Guardrails" loading="lazy" decoding="async" className="w-full h-full object-contain" />,
       title: "AI Guardrails",
       description:
         "We implement a critical framework of safeguards and controls to ensure that all AI operations are safe, predictable, and aligned with your business standards.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Automation & Efficiency" className="w-full h-full object-contain" />,
+      icon: <img src="/images/icon-staff.webp" alt="Automation & Efficiency" loading="lazy" decoding="async" className="w-full h-full object-contain" />,
       title: "Automation & Efficiency",
       description:
         "Our focus is turning AI capability into business efficiency. We deploy intelligent automation to streamline workflows, reduce costs, and increase your overall operational speed.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="Foundational AI Systems" className="w-full h-full object-contain" />,
+      icon: <img src="/images/icon-efficiency.webp" alt="Foundational AI Systems" loading="lazy" decoding="async" className="w-full h-full object-contain" />,
       title: "Foundational AI Systems",
       description:
         "We architect AI systems for the long term. Our approach ensures the solutions we build are scalable, adaptable, and prepared to support your business as it evolves.",
@@ -47,31 +47,31 @@ const AIExpertise = () => {
 
   const aiApproach = [
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="Operational Efficiency" className="w-full h-full object-contain" />,
+      icon: <img src="/images/icon-efficiency.webp" alt="Operational Efficiency" loading="lazy" decoding="async" className="w-full h-full object-contain" />,
       title: "Operational Efficiency",
       description:
         "Achieved by automating key processes and strengthening your existing systems for peak, reliable performance",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution2-5.png" alt="Secure Systems" className="w-full h-full object-contain" />,
+      icon: <img src="/images/icon-secure.webp" alt="Secure Systems" loading="lazy" decoding="async" className="w-full h-full object-contain" />,
       title: "Secure & Resilient Systems",
       description:
         "Building intelligent platforms on a foundation of trust, with resilient architecture designed for sustained, dependable operation.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Control & Guardrails" className="w-full h-full object-contain" />,
+      icon: <img src="/images/icon-llm.webp" alt="Control & Guardrails" loading="lazy" decoding="async" className="w-full h-full object-contain" />,
       title: "Control & Guardrails",
       description:
         "Establishing clear protocols and safeguards for a controlled, ethical, and effective deployment of AI capabilities.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="Future-Proofing" className="w-full h-full object-contain" />,
+      icon: <img src="/images/icon-ai-eng.webp" alt="Future-Proofing" loading="lazy" decoding="async" className="w-full h-full object-contain" />,
       title: "Future-Proofing Your Core Systems",
       description:
         "Architecting a scalable framework that ensures your core AI capabilities can evolve and adapt to future challenges.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Actionable Intelligence" className="w-full h-full object-contain" />,
+      icon: <img src="/images/icon-staff.webp" alt="Actionable Intelligence" loading="lazy" decoding="async" className="w-full h-full object-contain" />,
       title: "Actionable Intelligence",
       description:
         "Building systems that analyze complex data sets, uncovering critical insights, and empowering your team to make smarter, data-driven decisions.",
@@ -138,7 +138,7 @@ const AIExpertise = () => {
       <PageHero
         title="Command Your AI Future"
         subtitle="We build the intelligent systems that drive mission success."
-        backgroundImage="https://airbridgedevs.com/wp-content/uploads/2025/10/breadcumb_section-4.jpg"
+        backgroundImage="/images/bg-breadcrumb.webp"
       />
 
       {/* Solutions Section */}

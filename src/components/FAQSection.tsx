@@ -21,7 +21,7 @@ const FAQSection = ({
   badge,
   title,
   faqs,
-  backgroundImage = "https://airbridgedevs.com/wp-content/uploads/2025/09/aipt-bg1-4.jpg",
+  backgroundImage = "/images/bg-hero1.webp",
 }: FAQSectionProps) => {
   return (
     <section className="py-6 md:py-10 bg-[#FFFFFF] overflow-hidden">

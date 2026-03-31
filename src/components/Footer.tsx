@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Footer = () => {
@@ -8,7 +8,15 @@ const Footer = () => {
       {/* Contact Section */}
       <div className="container mx-auto px-6 py-10">
         <div className="flex justify-center">
-          <img src="https://airbridgedevs.com/wp-content/uploads/2025/10/cropped-air-bridg-g.png" alt="" className="w-32" />
+          <img
+            src="/images/airbridge-logo.svg"
+            alt="Airbridge Devs"
+            loading="lazy"
+            decoding="async"
+            width={128}
+            height={32}
+            className="w-32"
+          />
         </div>
         <div>
           <div className="space-y-5 text-center mx-auto my-7 text-[#222222]/70">

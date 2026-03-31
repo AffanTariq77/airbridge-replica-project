@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const Header = () => {
@@ -18,13 +17,19 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
 
-            <img src="/images/airbridge-logo.svg" alt="Airbridge Devs Logo" />
+            <img
+              src="/images/airbridge-logo.svg"
+              alt="Airbridge Devs Logo"
+              width={170}
+              height={34}
+              decoding="async"
+            />
             {/* <span className="text-2xl font-bold tracking-tight">
               <span className="text-foreground">AIR</span>
               <span className="text-primary">BRIDGE</span>
@@ -60,13 +65,12 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            <span className="block text-2xl leading-none" aria-hidden="true">
+              {mobileMenuOpen ? "×" : "☰"}
+            </span>
           </button>
         </nav>
 

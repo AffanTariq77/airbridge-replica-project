@@ -2,8 +2,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import FAQSection from "@/components/FAQSection";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import StrategicFocus from "@/components/StrategicFocus";
@@ -34,7 +32,7 @@ const ContactUs = () => {
       <PageHero
         title="Open a Secure Channel"
         subtitle="Connect with the Airbridge Devs Command"
-        backgroundImage="https://airbridgedevs.com/wp-content/uploads/2025/10/breadcumb_section-4.jpg"
+        backgroundImage="/images/bg-breadcrumb.webp"
       />
 
       {/* Direct Communication Section */}
@@ -94,7 +92,7 @@ const ContactUs = () => {
         badge="Initiate Your Mission Briefing"
         description="Whether you have a defined objective or are in the early stages of strategic planning, we’re ready to engage. Use this form to outline your requirements, and our command team will be in touch to coordinate our next steps."
         buttonText="TRANSMIT MESSAGE"
-        buttonLink="#"
+        buttonLink="/services"
       />
 
       {/* FAQ Section */}
@@ -123,9 +121,9 @@ const ContactUs = () => {
         title=""
         description="Learn more about our strategic approach and the solutions we deploy to ensure the success of our partners."
         buttonText="VIEW OUR SERVICES"
-        buttonLink="#"
+        buttonLink="/services"
         introButtonText="EXPLORE OUR CAPABILITIES"
-        introButtonLink="#"
+        introButtonLink="/ai-expertise"
       />
       <Footer />
     </div>

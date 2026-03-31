@@ -1,16 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import {
-  FullStackIcon,
-  AIEngineeringIcon,
-  StaffAugmentationIcon,
-  StrategicConsultingIcon,
-} from "@/components/icons/ServiceIcons";
 import StrategicFocus from "@/components/StrategicFocus";
 import FAQSection from "@/components/FAQSection";
 
@@ -25,7 +16,7 @@ const StaffAugmentation = () => {
         title="Reinforcing Your Team with Strategic Expertise"
         subtitle="Our Strategic Team Integration service provides the specialized expertise you need, precisely when and where 
         you need it, to overcome challenges and achieve critical objectives."
-         backgroundImage="http://airbridgedevs.com/wp-content/uploads/2025/11/Staff-Augmentation-.jpeg"
+        backgroundImage="/images/bg-staff-aug.webp"
          backgroundPosition="center bottom"
       />
     <StrategicFocus
@@ -48,19 +39,19 @@ const StaffAugmentation = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="Accelerating Key Projects" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-efficiency.webp" alt="Accelerating Key Projects" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Accelerating Key Projects</h4>
               <p className="text-muted-foreground">When a deadline is critical, our specialists can be deployed to provide the focused effort needed to push a project across the finish line on schedule.</p>
             </div>
 
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Solving Complex Problems" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-llm.webp" alt="Solving Complex Problems" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Solving Complex Problems</h4>
               <p className="text-muted-foreground">For unique or difficult technical challenges, we provide experts with deep, specialized knowledge to architect solutions and guide your team through implementation.</p>
             </div>
 
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Mentorship and Upskilling" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-staff.webp" alt="Mentorship and Upskilling" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Mentorship and Upskilling</h4>
               <p className="text-muted-foreground">Our integrated specialists do more than just execute; they share their knowledge, elevating the capabilities of your entire team for a lasting impact.</p>
             </div>
@@ -104,7 +95,7 @@ const StaffAugmentation = () => {
         buttonText="Discover More"
         buttonLink="/ai-expertise"
         introButtonText="Ready to Launch Your Next Initiative?"
-        introButtonLink="/services/#"
+        introButtonLink="/services"
       />
 
       <Footer />

@@ -19,7 +19,7 @@ const StrategicFocus = ({
     items = [],
     buttonText,
     buttonLink,
-    backgroundImage = "https://airbridgedevs.com/wp-content/uploads/2025/09/aipt-bg1-4.jpg",
+    backgroundImage = "/images/bg-hero1.webp",
     variant = "default",
 }: StrategicFocusProps) => {
     return (

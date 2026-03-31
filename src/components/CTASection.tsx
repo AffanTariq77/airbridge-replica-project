@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
-import { sendNotificationEmail } from "@/api/sendNotification";
 
 interface CTASectionProps {
   badge?: string;
@@ -46,6 +44,12 @@ const CTASection = ({
     setLoading(true);
     setError("");
     setSuccess(false);
+
+    const [{ supabase }, { sendNotificationEmail }] = await Promise.all([
+      import("@/lib/supabaseClient"),
+      import("@/api/sendNotification"),
+    ]);
+
     // Save to Supabase (table: contact_messages)
     const { error } = await supabase.from("contact_messages").insert([
       {
@@ -73,7 +77,7 @@ const CTASection = ({
   };
 
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-[hsl(var(--brand-lavender-dark))] bg-[url('https://airbridgedevs.com/wp-content/uploads/2025/09/aipt-bg1-4.jpg')] bg-center bg-cover relative overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-24 bg-[hsl(var(--brand-lavender-dark))] bg-center bg-cover relative overflow-hidden" style={{ backgroundImage: "url('/images/bg-hero1.webp')" }}>
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-[hsl(var(--brand-lavender-dark))]/80" />
 
@@ -81,7 +85,7 @@ const CTASection = ({
         {/* Intro Button (Centered at Top) */}
         {introButtonText && (
           <div className="flex justify-center mb-8 md:mb-12 lg:mb-16">
-            <Link to={introButtonLink || "#"}>
+            <Link to={introButtonLink || "/contact-us"}>
               <Button className="btn-gradient text-sm md:text-base lg:text-xl xl:text-[28px] py-4 px-6 md:py-6 md:px-10 lg:py-10 lg:px-16 rounded-full font-bold shadow-none hover:shadow-none transition-transform break-words max-w-full">
                 <span className="block overflow-wrap-anywhere">{introButtonText}</span>
               </Button>

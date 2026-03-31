@@ -1,12 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules"; // v12 correct
-import "swiper/css";
-
 const clientLogos = [
-  { name: "FanFood", logo: "http://airbridgedevs.com/wp-content/uploads/2025/10/logoo-1.png" },
-  { name: "DEVBLOCK", logo: "http://airbridgedevs.com/wp-content/uploads/2025/10/DevBlock_Logo_Color.png" },
-  { name: "RAFF", logo: "http://airbridgedevs.com/wp-content/uploads/2025/10/raff2.png" },
-  { name: "NewClient", logo: "http://airbridgedevs.com/wp-content/uploads/2025/10/logoo-2.png" },
+  { name: "FanFood", logo: "/images/logo-1.webp" },
+  { name: "DEVBLOCK", logo: "/images/logo-devblock.webp" },
+  { name: "RAFF", logo: "/images/logo-raff2.webp" },
+  { name: "NewClient", logo: "/images/logo-2.webp" },
 ];
 
 export default function ClientsCarousel() {
@@ -25,6 +21,8 @@ export default function ClientsCarousel() {
               <img
                 src={client.logo}
                 alt={client.name}
+                loading="lazy"
+                decoding="async"
                 className="h-5 md:h-10 lg:h-14 object-contain"
                 draggable={false}
               />

@@ -1,16 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import {
-  FullStackIcon,
-  AIEngineeringIcon,
-  StaffAugmentationIcon,
-  StrategicConsultingIcon,
-} from "@/components/icons/ServiceIcons";
 import StrategicFocus from "@/components/StrategicFocus";
 import FAQSection from "@/components/FAQSection";
 
@@ -18,31 +9,31 @@ const AIDrivenEngineeringAndConsulting = () => {
 
    const aiApproach = [
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution1-4.png" alt="Efficiency" className="w-16 h-16 object-contain" />,
+      icon: <img src="/images/icon-efficiency.webp" alt="Efficiency" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
       title: "Prioritized Use Cases",
       description:
         "A list of high-impact AI opportunities specifically tailored to your business needs and goals.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution2-5.png" alt="Secure Systems" className="w-16 h-16 object-contain" />,
+      icon: <img src="/images/icon-secure.webp" alt="Secure Systems" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
       title: "Implementation Roadmap",
       description:
         "A detailed, multi-phase technical and operational plan for executing your AI strategy.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Guardrails" className="w-16 h-16 object-contain" />,
+      icon: <img src="/images/icon-llm.webp" alt="Guardrails" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
       title: "Risk Assessment",
       description:
         "A complete analysis of potential challenges (technical, operational, ethical) and a clear mitigation plan.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="Future-Proofing" className="w-16 h-16 object-contain" />,
+      icon: <img src="/images/icon-ai-eng.webp" alt="Future-Proofing" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
       title: "Governance Framework",
       description:
         "A scalable structure for managing your AI systems, including guidelines for security, ethics, and compliance.",
     },
     {
-      icon: <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Intelligence" className="w-16 h-16 object-contain" />,
+      icon: <img src="/images/icon-staff.webp" alt="Intelligence" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
       title: "Success Metrics",
       description:
         "Clear Key Performance Indicators (KPIs) defined to measure the progress, impact, and Return on Investment (ROI) of your AI initiatives.",
@@ -56,7 +47,7 @@ const AIDrivenEngineeringAndConsulting = () => {
       <PageHero
         title="Engineering Intelligent Operations with Actionable AI Strategy"
         subtitle="Our AI-Driven Engineering and Strategic AI Consulting integrate intelligent systems into your core operations—providing the clarity, expert guidance, and actionable roadmap needed to create a decisive technological edge and achieve measurable success."
-         backgroundImage="http://airbridgedevs.com/wp-content/uploads/2025/11/Ai-Driven-Engineering-1-1.jpeg"
+        backgroundImage="/images/bg-ai-engineering.webp"
       />
     <StrategicFocus
             badge="The Challenge"
@@ -78,19 +69,19 @@ const AIDrivenEngineeringAndConsulting = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Custom AI Pipelines" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-llm.webp" alt="Custom AI Pipelines" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Custom AI Pipelines</h4>
               <p className="text-muted-foreground">We design and build end-to-end AI pipelines that automate the process of data ingestion, processing, and analysis, turning your raw data into actionable, real-time intelligence.</p>
             </div>
 
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="Advanced Automation Systems" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-ai-eng.webp" alt="Advanced Automation Systems" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Advanced Automation Systems</h4>
               <p className="text-muted-foreground">We identify key areas for improvement and deploy advanced automation systems that handle complex tasks, reduce human error, and free up your team to focus on high-value strategic work.</p>
             </div>
 
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Large Language Model (LLM) Integration" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-staff.webp" alt="Large Language Model (LLM) Integration" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Large Language Model (LLM) Integration</h4>
               <p className="text-muted-foreground">We go beyond off-the-shelf tools by fine-tuning and integrating LLMs directly into your workflows, creating custom solutions for content generation, data summarization, and enhanced customer support.</p>
             </div>
@@ -125,19 +116,19 @@ const AIDrivenEngineeringAndConsulting = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution6-4.png" alt="Assessment & Discovery" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-llm.webp" alt="Assessment & Discovery" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Assessment & Discovery</h4>
               <p className="text-muted-foreground">We begin with a deep analysis of your business objectives, technical infrastructure, and data maturity. This reconnaissance phase allows us to identify the most valuable and viable opportunities for AI.</p>
             </div>
 
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution4-4.png" alt="Roadmap & Architecture Design" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-ai-eng.webp" alt="Roadmap & Architecture Design" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Roadmap & Architecture Design</h4>
               <p className="text-muted-foreground">We architect a detailed, phased implementation plan. This strategic blueprint outlines the required technologies, resources, timelines, and clear KPIs for your AI initiative.</p>
             </div>
 
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="https://airbridgedevs.com/wp-content/uploads/2025/09/Aipt-solution05-1-4.png" alt="Governance & Scalability Planning" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-staff.webp" alt="Governance & Scalability Planning" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Governance & Scalability Planning</h4>
               <p className="text-muted-foreground">We establish the essential frameworks for AI governance, including security protocols and ethical guardrails, to ensure your solutions are not only powerful but also safe, reliable, and built to scale.</p>
             </div>
@@ -233,7 +224,7 @@ const AIDrivenEngineeringAndConsulting = () => {
         buttonText="Discover More"
         buttonLink="/ai-expertise"
         introButtonText="Ready to Launch Your Next Initiative?"
-        introButtonLink="/services/#"
+        introButtonLink="/services"
       />
 
       <Footer />
