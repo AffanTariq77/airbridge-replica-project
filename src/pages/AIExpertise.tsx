@@ -167,7 +167,7 @@ const AIExpertise = () => {
       {/* Philosophy Section */}
       <section className="py-24 bg-[hsl(var(--brand-lavender-dark))] anim-fade-in-up">
         <div className="container max-w-[1300px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             <div className="flex flex-col gap-6 lg:pr-6">
               <span className="section-badge w-fit inline-block bg-[#f7f7f8] mx-auto md:mx-0">OUR APPROACH TO AI</span>
               <h3 className="text-3xl lg:text-4xl font-normal leading-tight">
@@ -178,11 +178,11 @@ const AIExpertise = () => {
             {aiApproach.map((item, index) => (
               <div
                 key={index}
-                className="service-card flex flex-col gap-4"
+                className="service-card flex h-full min-h-[320px] flex-col gap-4"
               >
                 <div className="icon-container">{item.icon}</div>
                 <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
+                <p className="text-muted-foreground flex-1">{item.description}</p>
               </div>
             ))}
           </div>
@@ -199,9 +199,9 @@ const AIExpertise = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 items-stretch">
             {implementationSteps.map((step, index) => (
-              <div key={index} className="ai-operation-card">
+              <div key={index} className="ai-operation-card h-full min-h-[290px]">
                 <div className="ai-operation-card-icon">
                   {step.icon}
                 </div>
