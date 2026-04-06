@@ -144,7 +144,7 @@ const AIExpertise = () => {
       {/* Solutions Section */}
       <section className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mt-12 lg:mt-16 mb-16">
             <span className="section-badge mb-4 inline-block bg-[#f7f7f8]">Our Powerful Solutions</span>
             <h2 className="text-3xl lg:text-4xl font-bold">
               What Solutions We Best Offer
@@ -190,7 +190,7 @@ const AIExpertise = () => {
       </section>
 
       {/* Steps Table/Anatomy Section */}
-      <section className="py-0 bg-[#ffffff]">
+      <section className="pt-10 pb-0 bg-[#ffffff]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-badge mb-4 inline-block bg-[#f7f7f8]">AI IMPLEMENTATION PROCESS</span>
