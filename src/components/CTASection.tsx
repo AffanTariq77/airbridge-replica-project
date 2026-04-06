@@ -77,23 +77,23 @@ const CTASection = ({
   };
 
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-[hsl(var(--brand-lavender-dark))] bg-center bg-cover relative overflow-hidden" style={{ backgroundImage: "url('/images/bg-hero1.webp')" }}>
+    <section className="cta-section py-8 md:py-10 lg:py-12 bg-[hsl(var(--brand-lavender-dark))] bg-center bg-cover relative overflow-hidden" style={{ backgroundImage: "url('/images/bg-hero1.webp')" }}>
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-[hsl(var(--brand-lavender-dark))]/80" />
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto max-w-[1280px] px-4 md:px-6 relative z-10">
         {/* Intro Button (Centered at Top) */}
         {introButtonText && (
-          <div className="flex justify-center mb-8 md:mb-12 lg:mb-16">
+          <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
             <Link to={introButtonLink || "/contact-us"}>
-              <Button className="btn-gradient text-sm md:text-base lg:text-xl xl:text-[28px] py-4 px-6 md:py-6 md:px-10 lg:py-10 lg:px-16 rounded-full font-bold shadow-none hover:shadow-none transition-transform break-words max-w-full">
+              <Button className="btn-gradient text-sm md:text-base lg:text-xl xl:text-2xl py-3 px-6 md:py-4 md:px-10 lg:py-5 lg:px-14 rounded-full font-bold shadow-none hover:shadow-none transition-transform break-words max-w-full">
                 <span className="block overflow-wrap-anywhere">{introButtonText}</span>
               </Button>
             </Link>
           </div>
         )}
 
-        <div className="grid lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-center">
           {/* LEFT SIDE (35%) */}
           <div className="lg:col-span-5 text-left">
             {badge && (
@@ -122,8 +122,8 @@ const CTASection = ({
           <div className="hidden lg:block lg:col-span-1"></div>
 
           {/* RIGHT SIDE - Contact Form (60%) */}
-          <div className="lg:col-span-6 bg-[#FFFFFF] shadow-2xl rounded-[15px] md:rounded-[20px] lg:rounded-[25px] p-6 md:p-8 lg:p-12">
-            <h3 className="text-2xl md:text-3xl lg:text-[35px] font-bold mb-6 md:mb-8 text-[#000000] text-center">
+          <div className="lg:col-span-6 bg-[#FFFFFF] shadow-2xl rounded-[15px] md:rounded-[20px] lg:rounded-[25px] p-5 md:p-6 lg:p-8 xl:p-10 lg:max-h-[calc(100vh-180px)] lg:overflow-y-auto">
+            <h3 className="text-2xl md:text-3xl lg:text-[32px] font-bold mb-5 md:mb-6 text-[#000000] text-center">
               Contact Us
             </h3>
 
@@ -170,7 +170,7 @@ const CTASection = ({
               <textarea
                 name="message"
                 placeholder="Message"
-                rows={5}
+                rows={4}
                 value={form.message}
                 onChange={handleChange}
                 className="input w-full !bg-[#F4F4F4] border-none rounded-[12px] md:rounded-[15px] py-3 md:py-4 text-sm md:text-base"
@@ -179,7 +179,7 @@ const CTASection = ({
               {error && <div className="text-red-600 text-sm text-center">{error}</div>}
               {success && <div className="text-green-600 text-sm text-center">Thank you! We received your message.</div>}
 
-              <Button type="submit" className="w-full h-12 md:h-14 lg:h-16 text-base md:text-lg font-bold rounded-full btn-gradient" disabled={loading}>
+              <Button type="submit" className="w-full h-12 md:h-14 lg:h-14 text-base md:text-lg font-bold rounded-full btn-gradient" disabled={loading}>
                 {loading ? "Submitting..." : "Schedule a Mission Briefing"}
               </Button>
             </form>
