@@ -31,14 +31,14 @@ const ContactUs = () => {
 
       <PageHero
         title="Open a Secure Channel"
-        subtitle="Connect with the Airbridge Devs Command"
+        subtitle="Connect with the Airbridge Devs Command!"
         backgroundImage="/images/bg-breadcrumb.webp"
       />
 
       {/* Direct Communication Section */}
-      <section className="py-24 bg-[#ffffff]">
+      <section className="py-12 bg-[#ffffff]">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-4">
             {/* Title / Info */}
             <div className="flex flex-col justify-center">
               <span className="section-badge mb-6 inline-block w-fit bg-[#f7f7f8]">Contact Us</span>
@@ -81,7 +81,7 @@ const ContactUs = () => {
                 href="tel:+16282625009"
                 className="text-lg font-semibold hover:text-primary transition-colors"
               >
-                +1 628 2625 009
+                +1 628-262-5009
               </a>
             </div>
           </div>

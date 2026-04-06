@@ -138,7 +138,7 @@ const AIExpertise = () => {
       <PageHero
         title="Command Your AI Future"
         subtitle="We build the intelligent systems that drive mission success."
-        backgroundImage="/images/bg-breadcrumb.webp"
+        backgroundImage="/images/bg-ai-engineering.webp"
       />
 
       {/* Solutions Section */}
@@ -190,7 +190,7 @@ const AIExpertise = () => {
       </section>
 
       {/* Steps Table/Anatomy Section */}
-      <section className="py-20 bg-[#ffffff]">
+      <section className="py-0 bg-[#ffffff]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-badge mb-4 inline-block bg-[#f7f7f8]">AI IMPLEMENTATION PROCESS</span>

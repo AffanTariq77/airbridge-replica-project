@@ -102,25 +102,31 @@ const DesktopHomeSections = () => {
     <>
       <DeferredSection minHeight={2500}>
         <div style={{ contentVisibility: "auto", containIntrinsicSize: "1px 2500px" }}>
-          <section className="py-20 bg-[#FFFFFF]">
-            <div className="container mx-auto px-6">
-              <div className="mb-16">
-                <span className="section-badge mb-4 inline-block">OUR SERVICES</span>
-                <h2 className="text-3xl lg:text-4xl font-bold">Solutions to Propel Your Mission</h2>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {services.map((service, index) => (
-                  <ServiceCard
-                    key={index}
-                    icon={service.icon}
-                    title={service.title}
-                    description={service.description}
-                    link={service.link}
-                  />
-                ))}
-              </div>
-            </div>
-          </section>
+       <section className="py-20 bg-[#FFFFFF]">
+  <div className="container mx-auto px-6 text-center">
+    
+    <div className="mb-16 flex flex-col items-center">
+      <span className="section-badge mb-4 inline-block">OUR SERVICES</span>
+      
+      <h2 className="text-3xl lg:text-4xl font-bold">
+        Solutions to Propel Your Mission
+      </h2>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      {services.map((service, index) => (
+        <ServiceCard
+          key={index}
+          icon={service.icon}
+          title={service.title}
+          description={service.description}
+          link={service.link}
+        />
+      ))}
+    </div>
+
+  </div>
+</section>
 
           <section className="relative min-h-[650px] sm:min-h-[700px] md:min-h-[700px] lg:min-h-[800px]">
             <div className="absolute inset-0 bg-secondary">

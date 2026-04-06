@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
+import { Compass, Layers, Rocket, Shield } from "lucide-react";
 
 const Services = () => {
  const services = [
@@ -112,19 +113,27 @@ const Services = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {phases.map((phase, index) => (
-              <div key={index} className="phase-card h-full flex flex-col p-2">
-                <div className="p-3 flex items-center justify-center">
-                  <div className="phase-number text-[4rem] font-extrabold  mb-4 select-none">
-                    {index + 1}
+            {phases.map((phase, index) => {
+              const iconMap = [
+                <Compass className="w-6 h-6 text-primary" />,
+                <Layers className="w-6 h-6 text-primary" />,
+                <Rocket className="w-6 h-6 text-primary" />,
+                <Shield className="w-6 h-6 text-primary" />,
+              ];
+              return (
+                <div key={index} className="phase-card h-full flex flex-col p-2">
+                  <div className="p-3 flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                      {iconMap[index]}
+                    </div>
+                  </div>
+                  <div className="px-6 pb-8 pt-2 flex-grow">
+                    <h3 className="text-lg font-bold mb-3">{phase.phase}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{phase.description}</p>
                   </div>
                 </div>
-                <div className="px-6 pb-8 pt-2 flex-grow">
-                  <h3 className="text-lg font-bold mb-3">{phase.phase}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{phase.description}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

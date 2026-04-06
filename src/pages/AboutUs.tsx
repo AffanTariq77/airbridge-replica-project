@@ -34,7 +34,7 @@ const AboutUs = () => {
       <PageHero
         title="About Us"
         subtitle="Discover how our unique background and core principles translate into reliable, high-performance solutions."
-        backgroundImage="/images/bg-breadcrumb.webp"
+        backgroundImage="/images/bg-staff-aug.webp"
       />
 
       {/* Mission Section */}

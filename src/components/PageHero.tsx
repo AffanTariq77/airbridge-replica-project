@@ -11,15 +11,18 @@ interface PageHeroProps {
 
 const PageHero = ({ title, subtitle, badge, backgroundImage, backgroundPosition = 'center center', children }: PageHeroProps) => {
   return (
-    <section
-      className="page-hero-bg relative py-20 lg:py-28 overflow-hidden"
-      style={backgroundImage ? {
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: backgroundPosition,
-        backgroundRepeat: 'no-repeat'
-      } : {}}
-    >
+    <section className="page-hero-bg relative py-20 lg:py-28 overflow-hidden">
+      {backgroundImage && (
+        <img
+          src={backgroundImage}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover pointer-events-none"
+          style={{ objectPosition: backgroundPosition }}
+        />
+      )}
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 pointer-events-none" />
       {/* Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute right-0 top-0 w-1/2 h-full opacity-20">
@@ -51,12 +54,12 @@ const PageHero = ({ title, subtitle, badge, backgroundImage, backgroundPosition 
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl">
-          {badge && <span className="section-badge mb-6 inline-block">{badge}</span>}
-          <h1 className="text-[40px] lg:text-[45px] xl:text-[50px] font-semibold mb-6 leading-tight">
+          {badge && <span className="section-badge mb-6 inline-block bg-black/10 text-foreground border border-black/20">{badge}</span>}
+          <h1 className="text-[40px] lg:text-[45px] xl:text-[50px] font-semibold mb-6 leading-tight text-foreground">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-[16px] lg:text-[18px] text-muted-foreground max-w-2xl">
+            <p className="text-[16px] lg:text-[18px] text-foreground/80 max-w-2xl">
               {subtitle}
             </p>
           )}

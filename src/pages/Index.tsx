@@ -74,7 +74,7 @@ const Index = () => {
           />
         </div>
 
-        <div className="container mx-auto px-2 sm:px-6 relative z-10 mt-0">
+        <div className="container mx-auto px-2 sm:px-6 relative z-10 -mt-20">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Hero text — no animation so LCP text paints immediately */}
             <div className="mt-0 mb-8 lg:mb-0">
