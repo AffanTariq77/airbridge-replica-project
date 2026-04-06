@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -86,9 +86,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Address & LinkedIn */}
+          {/* Address & Social */}
           <div>
-            <div className="flex flex-col gap-8 h-full">
+            <div className="flex flex-col gap-6 h-full">
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <div>
@@ -99,18 +99,37 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex items-end gap-3">
+              <div className="flex items-center gap-3 pt-1">
+                <a
+                  href="https://www.facebook.com/airbridgedevs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all hover:scale-105"
+                  title="Follow us on Facebook"
+                  aria-label="Follow us on Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/airbridgedevs?fbclid=IwY2xjawRAha9leHRuA2FlbQIxMABicmlkETFOVnllQTAwNFdia2NQaEVhc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHiEYiap4dQ91eWzTF2aSsM9gFg-ZY9sqsjkpKLdGaRohhw-H_uwfUyAWLURp_aem_pUvSDQU0WjhES2vtSQ76Lw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all hover:scale-105"
+                  title="Follow us on Instagram"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
                 <a
                   href="https://www.linkedin.com/company/airbridgedevs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-all hover:scale-105"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all hover:scale-105"
                   title="Connect with us on LinkedIn"
+                  aria-label="Connect with us on LinkedIn"
                 >
-                  <Linkedin className="w-6 h-6" />
-                  
+                  <Linkedin className="w-5 h-5" />
                 </a>
-                <span className="font-medium text-base">airbridgedevs</span>
               </div>
             </div>
           </div>
