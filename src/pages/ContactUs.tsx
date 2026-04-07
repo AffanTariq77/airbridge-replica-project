@@ -115,8 +115,7 @@ const ContactUs = () => {
         </div>
       </section> */}
 
-      {/* Main Contact CTA with Form */}
-      <CTASection
+      {/* Main Contact CTA with Form */}<CTASection
         badge="REQUEST FREE TRIAL"
         title=""
         description="Learn more about our strategic approach and the solutions we deploy to ensure the success of our partners."
