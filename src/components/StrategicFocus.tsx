@@ -8,6 +8,7 @@ interface StrategicFocusProps {
     items?: string[];
     buttonText?: string;
     buttonLink?: string;
+    onButtonClick?: () => void;
     backgroundImage?: string;
     variant?: "lavender" | "default";
 }
@@ -19,6 +20,7 @@ const StrategicFocus = ({
     items = [],
     buttonText,
     buttonLink,
+    onButtonClick,
     backgroundImage = "/images/bg-hero1.webp",
     variant = "default",
 }: StrategicFocusProps) => {
@@ -88,11 +90,17 @@ const StrategicFocus = ({
                                         ))}
                                     </ul>
                                 )}
-                                {buttonText && buttonLink && (
+                                {buttonText && (buttonLink || onButtonClick) && (
                                     <div className="mt-8">
-                                        <Button asChild className="btn-gradient font-bold transition-transform hover:scale-105">
-                                            <Link to={buttonLink}>{buttonText}</Link>
-                                        </Button>
+                                        {onButtonClick ? (
+                                            <Button className="btn-gradient font-bold transition-transform hover:scale-105" onClick={onButtonClick}>
+                                                {buttonText}
+                                            </Button>
+                                        ) : (
+                                            <Button asChild className="btn-gradient font-bold transition-transform hover:scale-105">
+                                                <Link to={buttonLink!}>{buttonText}</Link>
+                                            </Button>
+                                        )}
                                     </div>
                                 )}
                             </div>

@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ServiceCard from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import ContactFormModal from "@/components/ContactFormModal";
 
 const Footer = lazy(() => import("@/components/Footer"));
 const DesktopHomeSections = lazy(() => import("@/components/home/DesktopHomeSections"));
@@ -34,6 +35,7 @@ const services = [
 
 const Index = () => {
   const [isMobile, setIsMobile] = useState<boolean>(getIsMobile);
+  const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(() => {
     const update = () => setIsMobile(window.innerWidth < 768);
@@ -89,11 +91,12 @@ const Index = () => {
                 and full-stack development. They will help you integrate LLMs, fortify
                 your systems, and make your business operations more effective.
               </p>
-              <Link to="/contact-us">
-                <Button className="btn-gradient px-8 py-6 text-base font-bold rounded-full hover:scale-105 transition-transform uppercase tracking-wider">
-                  Deploy a Mission Team
-                </Button>
-              </Link>
+              <Button
+                onClick={() => setContactOpen(true)}
+                className="btn-gradient px-8 py-6 text-base font-bold rounded-full hover:scale-105 transition-transform uppercase tracking-wider"
+              >
+                Deploy a Mission Team
+              </Button>
             </div>
 
             {/* Hero image — eager on desktop for fast LCP */}
@@ -138,11 +141,12 @@ const Index = () => {
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-2xl font-bold mb-4">Ready to Launch Your Next Initiative?</h2>
               <p className="text-[#444444] mb-6">Book a briefing with our team and get a focused execution plan.</p>
-              <Link to="/contact-us">
-                <Button className="btn-gradient px-8 py-5 text-sm font-bold rounded-full uppercase tracking-wider">
-                  Book a Briefing
-                </Button>
-              </Link>
+              <Button
+                className="btn-gradient px-8 py-5 text-sm font-bold rounded-full uppercase tracking-wider"
+                onClick={() => setContactOpen(true)}
+              >
+                Book a Briefing
+              </Button>
             </div>
           </section>
 
@@ -155,6 +159,7 @@ const Index = () => {
           <DesktopHomeSections />
         </Suspense>
       )}
+      <ContactFormModal open={contactOpen} onOpenChange={setContactOpen} />
     </div>
   );
 };

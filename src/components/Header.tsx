@@ -1,10 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import ContactFormModal from "@/components/ContactFormModal";
 
 const Header = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -55,11 +57,9 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link to="/contact-us">
-              <Button className="btn-gradient text-sm px-6 py-2.5">
-                BOOK A BRIEF
-              </Button>
-            </Link>
+            <Button className="btn-gradient text-sm px-6 py-2.5" onClick={() => setContactOpen(true)}>
+              BOOK A BRIEF
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,15 +89,17 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link to="/contact-us" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="btn-gradient text-sm w-full mt-2 transition-transform hover:scale-105">
-                  BOOK A BRIEF
-                </Button>
-              </Link>
+              <Button
+                className="btn-gradient text-sm w-full mt-2 transition-transform hover:scale-105"
+                onClick={() => { setMobileMenuOpen(false); setContactOpen(true); }}
+              >
+                BOOK A BRIEF
+              </Button>
             </div>
           </div>
         )}
       </div>
+      <ContactFormModal open={contactOpen} onOpenChange={setContactOpen} />
     </header>
   );
 };

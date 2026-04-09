@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect, useRef, useState } from "react";
 import ServiceCard from "@/components/ServiceCard";
+import ContactFormModal from "@/components/ContactFormModal";
 
 const CTASection = lazy(() => import("@/components/CTASection"));
 const ClientCarousel = lazy(() => import("@/components/ui/ClientCarousel"));
@@ -98,6 +99,7 @@ const aiApproach = [
 ];
 
 const DesktopHomeSections = () => {
+  const [contactOpen, setContactOpen] = useState(false);
   return (
     <>
       <DeferredSection minHeight={2500}>
@@ -224,7 +226,7 @@ const DesktopHomeSections = () => {
                 "A dedicated strategic partner, fully integrated with your team to achieve your objectives.",
               ]}
               buttonText="Book an Introductory Call"
-              buttonLink="/contact-us"
+              onButtonClick={() => setContactOpen(true)}
             />
           </Suspense>
 
@@ -296,6 +298,7 @@ const DesktopHomeSections = () => {
           </Suspense>
         </>
       </DeferredSection>
+      <ContactFormModal open={contactOpen} onOpenChange={setContactOpen} />
     </>
   );
 };
