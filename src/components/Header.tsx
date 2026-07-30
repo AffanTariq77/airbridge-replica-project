@@ -12,11 +12,13 @@ const Header = () => {
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "AI Expertise", path: "/ai-expertise" },
+    { name: "Blog", path: "/blog" },
     { name: "About Us", path: "/about-us" },
     { name: "Contact Us", path: "/contact-us" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) =>
+    path === "/" ? location.pathname === "/" : location.pathname.startsWith(path);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-border">

@@ -52,6 +52,12 @@ const Footer = () => {
               >
                 Strategic AI Consulting
               </Link>
+              <Link
+                to="/blog"
+                className="block text-base text-[#222222]/70 hover:text-primary transition-colors font-medium"
+              >
+                Blog
+              </Link>
             </div>
           </div>
 
