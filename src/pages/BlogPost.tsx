@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { format } from "date-fns";
 import { ArrowLeft, Clock } from "lucide-react";
-import ReactMarkdown, { type Components } from "react-markdown";
+import ReactMarkdown, { defaultUrlTransform, type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -20,14 +20,47 @@ import {
   type BlogSectionStyle,
 } from "@/lib/blog";
 
-// A wide table would otherwise push the whole article sideways on a phone, so
-// it scrolls inside its own box instead.
+// Coloured words. The admin toolbar writes them as [words](color:purple) or
+// [words](color:#1a2b3c), and they render as a plain coloured span, not a link.
+// Unknown names render as normal text. Must match COLOURS in the admin panel's FormatToolbar.
+const TEXT_COLOURS: Record<string, string> = {
+  purple: "text-primary",
+  pink: "text-pink-600",
+  blue: "text-blue-600",
+  green: "text-emerald-600",
+  orange: "text-orange-600",
+  red: "text-red-600",
+};
+
+// Lets color: through; every other URL gets the library's usual sanitising
+const urlTransform = (url: string) =>
+  url.startsWith("color:") ? url : defaultUrlTransform(url);
+
 const markdownComponents: Components = {
+  // A wide table would otherwise push the whole article sideways on a phone,
+  // so it scrolls inside its own box instead.
   table: ({ node: _node, ...props }) => (
     <div className="overflow-x-auto">
       <table {...props} />
     </div>
   ),
+  a: ({ node: _node, href, children, ...props }) => {
+    if (href?.startsWith("color:")) {
+      const colour = href.slice(6);
+      // Custom picks are a strict #rrggbb check before they reach a style
+      // attribute, so nothing else can be injected through it
+      return /^#[0-9a-f]{6}$/i.test(colour) ? (
+        <span style={{ color: colour }}>{children}</span>
+      ) : (
+        <span className={TEXT_COLOURS[colour] ?? ""}>{children}</span>
+      );
+    }
+    return (
+      <a href={href} {...props}>
+        {children}
+      </a>
+    );
+  },
 };
 
 // Section text and legacy bodies are both Markdown, so authors get smaller
@@ -36,8 +69,14 @@ const Markdown = ({ children, className = "" }: { children: string; className?: 
   <div
     className={`prose prose-lg max-w-none prose-headings:font-bold prose-a:text-primary prose-img:rounded-2xl ${className}`}
   >
-    <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-      {children}
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={markdownComponents}
+      urlTransform={urlTransform}
+    >
+      {/* Markdown has no "•" list marker, but the admin bullet button writes
+          one and pasted text often has them, so read it as "- " */}
+      {children.replace(/^(\s*)•\s+/gm, "$1- ")}
     </ReactMarkdown>
   </div>
 );

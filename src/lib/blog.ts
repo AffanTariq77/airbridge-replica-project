@@ -28,8 +28,17 @@ export interface BlogPost {
   faqs?: BlogFaq[] | null;
   content_md?: string | null; // legacy body, only used when there are no sections
   cover_image_url?: string | null;
+  category_id?: string | null;
   created_at: string;
   updated_at: string;
+}
+
+// A side tab on the blog page, managed in the admin panel
+export interface BlogCategory {
+  id: string;
+  name: string;
+  slug: string;
+  position: number;
 }
 
 type PostText = Pick<BlogPost, "content_md" | "description" | "sections" | "faqs">;
@@ -104,4 +113,21 @@ export async function getPostBySlug(slug: string) {
   }
 
   return (data as BlogPost | null) ?? null;
+}
+
+// Categories in sidebar order. Empty when the table is missing or unreachable,
+// so the blog still renders without its side tabs.
+export async function listCategories() {
+  const { data, error } = await supabase
+    .from("blog_categories")
+    .select("*")
+    .order("position")
+    .order("created_at");
+
+  if (error) {
+    console.error("Blog categories fetch error:", error);
+    return [];
+  }
+
+  return (data || []) as BlogCategory[];
 }
