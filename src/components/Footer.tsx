@@ -155,15 +155,15 @@ const Footer = () => {
         </div>
 
         {/* Landing Pages */}
-        <nav aria-label="Landing pages" className="mt-16 flex flex-wrap gap-x-8 gap-y-3">
-          {landingPages.map((page) => (
-            <a key={page.url} href={page.url} className="text-base text-[#222222]/70 hover:text-primary transition-colors font-medium">
-              {page.label}
-            </a>
-          ))}
-          <Link to="/terms" className="text-base text-[#222222]/70 hover:text-primary transition-colors font-medium">
-            Terms and Conditions
-          </Link>
+        <nav aria-label="Specialised Services" className="mt-16 pt-12 border-t border-[#EEEEEE]">
+          <h3 className="font-bold text-xl mb-8">Specialised Services</h3>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-4">
+            {landingPages.map((page) => (
+              <a key={page.url} href={page.url} className="block text-base text-[#222222]/70 hover:text-primary transition-colors font-medium">
+                {page.label}
+              </a>
+            ))}
+          </div>
         </nav>
       </div>
 
@@ -171,7 +171,10 @@ const Footer = () => {
       <div className="border-t border-[#EEEEEE] bg-[#00296b]">
         <div className="container mx-auto px-6 py-6">
           <p className="text-base text-white text-center font-medium">
-            Copyright © {new Date().getFullYear()} AirBridge Devs | Powered by AirBridge Devs
+            Copyright © {new Date().getFullYear()} AirBridge Devs | Powered by AirBridge Devs |{" "}
+            <Link to="/terms" className="underline-offset-4 hover:underline">
+              Terms and Conditions
+            </Link>
           </p>
         </div>
       </div>
