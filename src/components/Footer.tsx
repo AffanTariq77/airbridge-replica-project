@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
 
+const landingPages = [
+  { label: "AI Strategy & Consulting", url: "https://strategy.airbridgedevs.com" },
+  { label: "AI Integration & Deployment", url: "https://integrate.airbridgedevs.com" },
+  { label: "Generative AI Solutions", url: "https://genai.airbridgedevs.com" },
+  { label: "AI-Powered Automation", url: "https://automate.airbridgedevs.com" },
+  { label: "AI Analytics Dashboards", url: "https://data.airbridgedevs.com" },
+  { label: "Custom Software Development", url: "https://build.airbridgedevs.com" },
+  { label: "AI-Centric Software Development", url: "https://ai.airbridgedevs.com" },
+  { label: "LLM Cost Optimization", url: "https://airbridgedevs.co" },
+  { label: "Food Tech", url: "https://food-tech.airbridgedevs.com" },
+  { label: "Prompt to Product", url: "https://mvp.airbridgedevs.com" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-white text-[#222222]">
@@ -140,6 +153,18 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        {/* Landing Pages */}
+        <nav aria-label="Landing pages" className="mt-16 flex flex-wrap gap-x-8 gap-y-3">
+          {landingPages.map((page) => (
+            <a key={page.url} href={page.url} className="text-base text-[#222222]/70 hover:text-primary transition-colors font-medium">
+              {page.label}
+            </a>
+          ))}
+          <Link to="/terms" className="text-base text-[#222222]/70 hover:text-primary transition-colors font-medium">
+            Terms and Conditions
+          </Link>
+        </nav>
       </div>
 
       {/* Bottom Bar */}
