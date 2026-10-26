@@ -43,7 +43,7 @@ const Footer = () => {
             />
             <h3 className="font-bold text-xl mb-5">Who is Airbridge?</h3>
             <p className="text-base text-[#222222]/70 leading-relaxed max-w-xs">
-              Airbridge is the leader in Mission-Ready Engineering a disciplined and strategic approach to building technology
+              Airbridge is the leader in Mission Ready Engineering a disciplined and strategic approach to building technology
             </p>
             <div className="flex items-center gap-3 mt-7">
               <a
