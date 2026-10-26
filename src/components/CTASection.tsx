@@ -45,10 +45,17 @@ const CTASection = ({
     setError("");
     setSuccess(false);
 
-    const [{ supabase }, { sendNotificationEmail }] = await Promise.all([
+    // Chunk names change on every deploy, so a tab opened before one can fail to load these
+    const modules = await Promise.all([
       import("@/lib/supabaseClient"),
       import("@/api/sendNotification"),
-    ]);
+    ]).catch(() => null);
+    if (!modules) {
+      setLoading(false);
+      setError("Couldn't load the form. Please refresh the page and try again.");
+      return;
+    }
+    const [{ supabase }, { sendNotificationEmail }] = modules;
 
     // Save to Supabase (table: contact_messages)
     const { error } = await supabase.from("contact_messages").insert([
