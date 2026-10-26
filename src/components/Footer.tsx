@@ -14,6 +14,11 @@ const landingPages = [
   { label: "Prompt to Product", url: "https://mvp.airbridgedevs.com" },
 ];
 
+const serviceColumns = [
+  { title: "AI Services", links: landingPages.slice(0, 5) },
+  { title: "Specialised Services", links: landingPages.slice(5) },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-white text-[#222222]">
@@ -74,59 +79,45 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Specialised Services Section */}
-          <nav aria-label="Specialised Services" className="md:col-span-2">
-            <h3 className="font-bold text-xl mb-8">Specialised Services</h3>
-            <div className="grid sm:grid-cols-2 gap-x-16 gap-y-4">
-              {landingPages.map((page) => (
-                <a key={page.url} href={page.url} className="block text-base text-[#222222]/70 hover:text-primary transition-colors font-medium">
-                  {page.label}
-                </a>
-              ))}
-            </div>
-          </nav>
+          {/* Service Sections */}
+          {serviceColumns.map((column) => (
+            <nav key={column.title} aria-label={column.title}>
+              <h3 className="font-bold text-xl mb-8">{column.title}</h3>
+              <div className="space-y-4">
+                {column.links.map((page) => (
+                  <a key={page.url} href={page.url} className="block text-base text-[#222222]/70 hover:text-primary transition-colors font-medium">
+                    {page.label}
+                  </a>
+                ))}
+              </div>
+            </nav>
+          ))}
         </div>
 
         {/* Contact & Social */}
-        <div className="mt-16 pt-12 border-t border-[#EEEEEE] grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="flex items-start gap-4">
-            <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h4 className="font-bold text-base mb-2">Email</h4>
-              <a
-                href="mailto:info@airbridgedevs.com"
-                className="text-base text-[#222222]/70 hover:text-primary transition-colors"
-              >
-                info@airbridgedevs.com
-              </a>
-            </div>
-          </div>
+        <div className="mt-16 flex flex-wrap items-center justify-between gap-x-10 gap-y-6">
+          <a
+            href="mailto:info@airbridgedevs.com"
+            className="flex items-center gap-3 text-base text-[#222222]/70 hover:text-primary transition-colors"
+          >
+            <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+            info@airbridgedevs.com
+          </a>
 
-          <div className="flex items-start gap-4">
-            <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h4 className="font-bold text-base mb-2">Phone</h4>
-              <a
-                href="tel:+16282625009"
-                className="text-base text-[#222222]/70 hover:text-primary transition-colors"
-              >
-                Mobile: +1 628 2625 009
-              </a>
-            </div>
-          </div>
+          <a
+            href="tel:+16282625009"
+            className="flex items-center gap-3 text-base text-[#222222]/70 hover:text-primary transition-colors"
+          >
+            <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+            Mobile: +1 628 2625 009
+          </a>
 
-          <div className="flex items-start gap-4">
-            <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <h4 className="font-bold text-base mb-2">Address</h4>
-              <p className="text-base text-[#222222]/70 leading-relaxed">
-                20A Tanjong Pagar Road,<br />
-                SINGAPORE 088443
-              </p>
-            </div>
-          </div>
+          <p className="flex items-center gap-3 text-base text-[#222222]/70">
+            <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
+            20A Tanjong Pagar Road, SINGAPORE 088443
+          </p>
 
-          <div className="flex items-center gap-3 md:justify-end">
+          <div className="flex items-center gap-3">
             <a
               href="https://www.facebook.com/airbridgedevs"
               target="_blank"
