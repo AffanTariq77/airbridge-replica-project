@@ -44,20 +44,20 @@ const DeferredSection = ({ children, minHeight = 0 }: DeferredSectionProps) => {
 
 const services = [
   {
-    icon: <img src="/images/icon-ai-eng.webp" alt="AI Engineering" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-ai-eng.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "AI-Driven Engineering & Consulting",
     description: "Designing secure, scalable AI solutions combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
     link: "/services/ai-driven-engineering-and-consulting",
   },
   {
-    icon: <img src="/images/icon-llm.webp" alt="LLM Cost Audit" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-llm.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "LLM Cost Audit & Optimization",
     description:
       "Uncovering hidden inefficiencies in your LLM stack to reduce token and model costs by up to 80% through disciplined audits, architecture optimization, and continuous performance monitoring.",
     link: "/services",
   },
   {
-    icon: <img src="/images/icon-staff.webp" alt="Staff Augmentation" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-staff.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "Staff Augmentation",
     description:
       "Embedding our specialists within your team to provide the focused expertise needed to solve difficult problems and meet critical deadlines.",
@@ -67,31 +67,31 @@ const services = [
 
 const aiApproach = [
   {
-    icon: <img src="/images/icon-efficiency.webp" alt="Efficiency" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-efficiency.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "Operational Efficiency",
     description:
       "Achieved by automating key processes and strengthening your existing systems for peak, reliable performance",
   },
   {
-    icon: <img src="/images/icon-secure.webp" alt="Secure Systems" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-secure.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "Secure & Resilient Systems",
     description:
       "Building intelligent platforms on a foundation of trust, with resilient architecture designed for sustained, dependable operation.",
   },
   {
-    icon: <img src="/images/icon-llm.webp" alt="Guardrails" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-llm.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "Control & Guardrails",
     description:
       "Establishing clear protocols and safeguards for a controlled, ethical, and effective deployment of AI capabilities.",
   },
   {
-    icon: <img src="/images/icon-ai-eng.webp" alt="Future-Proofing" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-ai-eng.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "Future-Proofing Your Core Systems",
     description:
       "Architecting a scalable framework that ensures your core AI capabilities can evolve and adapt to future challenges.",
   },
   {
-    icon: <img src="/images/icon-staff.webp" alt="Intelligence" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-staff.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "Actionable Intelligence",
     description:
       "Building systems that analyze complex data sets, uncovering critical insights, and empowering your team to make smarter, data-driven decisions.",
@@ -155,19 +155,19 @@ const DesktopHomeSections = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12 md:gap-16 lg:gap-32">
                       <div className="flex flex-col items-center sm:items-end gap-4 sm:gap-6 md:gap-8">
                         <div className="flex items-center justify-center w-16 h-16 xs:w-20 xs:h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 hover:scale-105 transition-transform duration-300">
-                          <img src="/images/icon-eye-scan.webp" alt="Vision Icon" width={144} height={144} loading="lazy" decoding="async" className="w-full h-full object-contain" />
+                          <img src="/images/icon-eye-scan.webp" alt="" aria-hidden="true" width={144} height={144} loading="lazy" decoding="async" className="w-full h-full object-contain" />
                         </div>
                         <div className="text-sm xs:text-base sm:text-base md:text-lg lg:text-xl text-center sm:text-right px-3 sm:px-0 max-w-[280px] xs:max-w-xs sm:max-w-none mx-auto">
-                          <h4 className="font-semibold text-[#FFFFFF] mb-2 text-base xs:text-lg sm:text-xl">Vision:</h4>
+                          <h3 className="font-semibold text-[#FFFFFF] mb-2 text-base xs:text-lg sm:text-xl">Vision:</h3>
                           <p className="text-[#FFFFFF] leading-relaxed">Discover what's possible through clarity, creativity, and AI insight.</p>
                         </div>
                       </div>
                       <div className="flex flex-col items-center sm:items-start gap-4 sm:gap-6 md:gap-8">
                         <div className="flex items-center justify-center w-16 h-16 xs:w-20 xs:h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 hover:scale-105 transition-transform duration-300">
-                          <img src="/images/icon-chip.webp" alt="Execution Icon" width={144} height={144} loading="lazy" decoding="async" className="w-full h-full object-contain" />
+                          <img src="/images/icon-chip.webp" alt="" aria-hidden="true" width={144} height={144} loading="lazy" decoding="async" className="w-full h-full object-contain" />
                         </div>
                         <div className="text-sm xs:text-base sm:text-base md:text-lg lg:text-xl text-center sm:text-left px-3 sm:px-0 max-w-[280px] xs:max-w-xs sm:max-w-none mx-auto">
-                          <h4 className="font-semibold text-[#FFFFFF] mb-2 text-base xs:text-lg sm:text-xl">Execution:</h4>
+                          <h3 className="font-semibold text-[#FFFFFF] mb-2 text-base xs:text-lg sm:text-xl">Execution:</h3>
                           <p className="text-[#FFFFFF] leading-relaxed">From concept to completion, we turn intelligent ideas into working systems.</p>
                         </div>
                       </div>
@@ -195,9 +195,9 @@ const DesktopHomeSections = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-stretch">
                 <div className="flex flex-col gap-6 lg:pr-6 mb-4 md:mb-0">
                   <span className="section-badge w-fit inline-block mx-auto md:mx-0">OUR APPROACH TO AI</span>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal leading-tight break-words">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal leading-tight break-words">
                     We treat LLM integration as the starting point for a larger AI strategy that builds a lasting, competitive advantage
-                  </h3>
+                  </h2>
                 </div>
 
                 {aiApproach.map((item, index) => (

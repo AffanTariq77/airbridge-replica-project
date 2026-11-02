@@ -1,6 +1,8 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ServiceCard from "@/components/ServiceCard";
+import Seo from "@/components/Seo";
+import { organizationSchema, websiteSchema, homeServicesSchema } from "@/lib/schema";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ContactFormModal from "@/components/ContactFormModal";
@@ -14,19 +16,19 @@ const getIsMobile = (): boolean =>
 
 const services = [
   {
-    icon: <img src="/images/icon-ai-eng.webp" alt="AI Engineering" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-ai-eng.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "AI-Driven Engineering & Consulting",
     description: "Designing secure, scalable AI solutions combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
     link: "/services/ai-driven-engineering-and-consulting",
   },
   {
-    icon: <img src="/images/icon-llm.webp" alt="LLM Cost Audit" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-llm.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "LLM Cost Audit & Optimization",
     description: "Uncovering hidden inefficiencies in your LLM stack to reduce token and model costs by up to 80% through disciplined audits, architecture optimization, and continuous performance monitoring.",
     link: "/services",
   },
   {
-    icon: <img src="/images/icon-staff.webp" alt="Staff Augmentation" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    icon: <img src="/images/icon-staff.webp" alt="" aria-hidden="true" width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     title: "Staff Augmentation",
     description: "Embedding our specialists within your team to provide the focused expertise needed to solve difficult problems and meet critical deadlines.",
     link: "/services/staff-augmentation",
@@ -46,6 +48,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-[#FFFFFF]">
+      <Seo
+        title="AI Engineering & AI Staff Augmentation | Airbridge Devs"
+        description="Airbridge Devs builds secure, scalable AI systems — LLM integration, cost optimization, and mission-ready engineering teams embedded with yours."
+        path="/"
+        schema={[organizationSchema, websiteSchema, homeServicesSchema]}
+      />
       <Header />
 
       {/* Hero Section */}
@@ -103,7 +111,7 @@ const Index = () => {
             <div className="relative hidden lg:block z-0">
               <img
                 src="/images/hero-illustration.webp"
-                alt="3D AI Technology Illustration"
+                alt="Isometric illustration of an AI model at the centre of a connected engineering system"
                 width={630}
                 height={630}
                 fetchPriority="high"
