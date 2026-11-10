@@ -3,19 +3,21 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema, homeServicesSchema } from "@/lib/schema";
 import { Compass, Layers, Rocket, Shield } from "lucide-react";
 
 const Services = () => {
  const services = [
     {
-      icon: <img src="/images/icon-ai-eng.webp" alt="AI Engineering" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+      icon: <img src="/images/icon-ai-eng.webp" alt="" aria-hidden="true" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
       title: "AI-Driven Engineering & Consulting",
       description: "Designing secure, scalable AI solutions combining custom AI pipelines, automation, and LLMs with clear strategic guidance to accelerate performance and long-term growth.",
       //  "Applying custom AI pipelines, automation, and Large Language Models (LLMs) to improve your operational speed and overall effectiveness.",
       link: "/services/ai-driven-engineering-and-consulting",
     },
     {
-      icon: <img src="/images/icon-llm.webp" alt="Full-Stack" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+      icon: <img src="/images/icon-llm.webp" alt="" aria-hidden="true" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
       title: "LLM Cost Audit & Optimization",
       description:
         "Uncovering hidden inefficiencies in your LLM stack to reduce token and model costs by up to 80% through disciplined audits, architecture optimization, and continuous performance monitoring.",
@@ -30,14 +32,14 @@ const Services = () => {
     //   link: "/services",
     // },
     // {
-    //   icon: <img src="/images/icon-efficiency.webp" alt="Full-Stack" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+    //   icon: <img src="/images/icon-efficiency.webp" alt="" aria-hidden="true" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
     //   title: "Full-Stack Development",
     //   description:
     //     "Building durable, secure, and high-performance digital platforms, from initial front-end design to final back-end architecture.",
     //   link: "/services",
     // },
     {
-      icon: <img src="/images/icon-staff.webp" alt="Staff Augmentation" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
+      icon: <img src="/images/icon-staff.webp" alt="" aria-hidden="true" width="64" height="64" loading="lazy" decoding="async" className="w-16 h-16 object-contain" />,
       title: "Staff Augmentation",
       description:
         "Embedding our specialists within your team to provide the focused expertise needed to solve difficult problems and meet critical deadlines.",
@@ -74,6 +76,15 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-[hsl(var(--brand-lavender-dark))]">
+      <Seo
+        title="AI Engineering Services & LLM Optimization | Airbridge Devs"
+        description="AI-driven engineering and consulting, LLM cost audit and optimization, and embedded staff augmentation — the full range of Airbridge Devs services."
+        path="/services"
+        schema={[
+          breadcrumbSchema([{ name: "Services", path: "/services" }]),
+          homeServicesSchema,
+        ]}
+      />
       <Header />
 
       <PageHero
@@ -93,6 +104,7 @@ const Services = () => {
                 title={service.title}
                 description={service.description}
                 link={service.link}
+                headingLevel="h2"
               />
             ))}
           </div>

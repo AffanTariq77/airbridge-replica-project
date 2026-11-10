@@ -80,7 +80,22 @@ export const websiteSchema = {
   inLanguage: "en",
 };
 
-/** Service offerings surfaced on the homepage. */
+/**
+ * Breadcrumb trail for a page. "Home" is prepended automatically, so a call
+ * passing [{ name: "Services", path: "/services" }] yields Home > Services.
+ */
+export const breadcrumbSchema = (trail: { name: string; path: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [{ name: "Home", path: "/" }, ...trail].map((crumb, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: crumb.name,
+    item: `${SITE_ORIGIN}${crumb.path}`,
+  })),
+});
+
+/** The three service offerings, shared by the homepage and the services hub. */
 export const homeServicesSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
