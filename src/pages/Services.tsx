@@ -78,7 +78,7 @@ const Services = () => {
     <div className="min-h-screen bg-[hsl(var(--brand-lavender-dark))]">
       <Seo
         title="AI Engineering Services & LLM Optimization | Airbridge Devs"
-        description="AI-driven engineering and consulting, LLM cost audit and optimization, and embedded staff augmentation — the full range of Airbridge Devs services."
+        description="AI-driven engineering and consulting, LLM cost audit and optimization, and embedded staff augmentation. The full range of Airbridge Devs services."
         path="/services"
         schema={[
           breadcrumbSchema([{ name: "Services", path: "/services" }]),

@@ -82,7 +82,7 @@ const AIDrivenEngineeringAndConsulting = () => {
     <div className="min-h-screen bg-[hsl(var(--brand-lavender-dark))]">
       <Seo
         title="AI Consulting & AI-Driven Engineering | Airbridge Devs"
-        description="Strategic AI consulting and engineering — custom AI pipelines, automation and LLM integration, with a clear roadmap from assessment to production."
+        description="Strategic AI consulting and engineering: custom AI pipelines, automation and LLM integration, with a clear roadmap from assessment to production."
         path="/services/ai-driven-engineering-and-consulting"
         schema={[
           breadcrumbSchema([
@@ -102,7 +102,7 @@ const AIDrivenEngineeringAndConsulting = () => {
 
       <PageHero
         title="Engineering Intelligent Operations with Actionable AI Strategy"
-        subtitle="Our AI-Driven Engineering and Strategic AI Consulting integrate intelligent systems into your core operations—providing the clarity, expert guidance, and actionable roadmap needed to create a decisive technological edge and achieve measurable success."
+        subtitle="Our AI-Driven Engineering and Strategic AI Consulting integrate intelligent systems into your core operations, providing the clarity, expert guidance, and actionable roadmap needed to create a decisive technological edge and achieve measurable success."
         backgroundImage="/images/bg-ai-engineering.webp"
       />
     <StrategicFocus

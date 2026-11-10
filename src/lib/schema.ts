@@ -25,7 +25,7 @@ export const organizationSchema = {
   },
   image: `${SITE_ORIGIN}/images/og-airbridge-devs.jpg`,
   description:
-    "Airbridge Devs builds secure, scalable AI systems — LLM integration, cost optimization, and mission-ready engineering teams embedded with client teams.",
+    "Airbridge Devs builds secure, scalable AI systems: LLM integration, cost optimization, and mission-ready engineering teams embedded with client teams.",
   telephone: "+1-628-262-5009",
   address: {
     "@type": "PostalAddress",

@@ -50,7 +50,7 @@ const Index = () => {
     <div className="min-h-screen bg-[#FFFFFF]">
       <Seo
         title="AI Engineering & AI Staff Augmentation | Airbridge Devs"
-        description="Airbridge Devs builds secure, scalable AI systems — LLM integration, cost optimization, and mission-ready engineering teams embedded with yours."
+        description="Airbridge Devs builds secure, scalable AI systems: LLM integration, cost optimization, and mission-ready engineering teams embedded with yours."
         path="/"
         schema={[organizationSchema, websiteSchema, homeServicesSchema]}
       />
