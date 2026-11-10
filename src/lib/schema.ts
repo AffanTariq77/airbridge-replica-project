@@ -95,6 +95,41 @@ export const breadcrumbSchema = (trail: { name: string; path: string }[]) => ({
   })),
 });
 
+/**
+ * FAQ markup. Worth more than usual here: answer engines quote self-contained
+ * question/answer pairs, so this is the most directly citable thing on a page.
+ * Google requires the marked-up text to match what the visitor actually sees,
+ * so always build this from the same array the page renders.
+ */
+export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+});
+
+/** A single service offering page. */
+export const serviceSchema = ({
+  name,
+  description,
+  path,
+}: {
+  name: string;
+  description: string;
+  path: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name,
+  description,
+  url: `${SITE_ORIGIN}${path}`,
+  provider: { "@id": ORGANIZATION_ID },
+  areaServed: organizationSchema.areaServed,
+});
+
 /** The three service offerings, shared by the homepage and the services hub. */
 export const homeServicesSchema = {
   "@context": "https://schema.org",
