@@ -1,15 +1,58 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import CTASection from "@/components/CTASection";
 import StrategicFocus from "@/components/StrategicFocus";
 import FAQSection from "@/components/FAQSection";
+
+const faqs = [
+          {
+            question: 'How is this different from a traditional "staff augmentation" service?',
+            answer:
+              'We embed vetted, mission-ready specialists who act as integrated members of your team, not just temporary contractors. Our focus is strategic outcomes and operational discipline.',
+          },
+          {
+            question: 'How quickly can we integrate a specialist into your team?',
+            answer:
+              'Depending on role complexity, we can typically place mission-ready specialists within days to a few weeks, following a short onboarding and alignment phase.',
+          },
+          {
+            question: 'Do our integrated specialists work on-site?',
+            answer:
+              'We support both remote and on-site engagement models, and we adapt to whatever model best fits your operational and security requirements.',
+          },
+          {
+            question: 'What happens after the project or "mission" is complete?',
+            answer:
+              'We provide knowledge transfer, documentation, and optional continued support to ensure your team retains capability and the system remains reliable.',
+          }
+];
 
 const StaffAugmentation = () => {
 
  
   return (
     <div className="min-h-screen bg-[hsl(var(--brand-lavender-dark))]">
+      <Seo
+        title="AI & Software Staff Augmentation Services | Airbridge Devs"
+        description="Embed vetted AI and software specialists in your team, often within days. Mission-ready engineers for project acceleration and complex problems."
+        path="/services/staff-augmentation"
+        schema={[
+          breadcrumbSchema([
+            { name: "Services", path: "/services" },
+            { name: "Staff Augmentation", path: "/services/staff-augmentation" },
+          ]),
+          serviceSchema({
+            name: "Staff Augmentation",
+            description:
+              "Vetted AI and software specialists embedded as integrated members of your team to accelerate projects, solve complex problems and upskill staff.",
+            path: "/services/staff-augmentation",
+          }),
+          faqSchema(faqs),
+        ]}
+      />
       <Header />
 
       <PageHero
@@ -39,19 +82,19 @@ const StaffAugmentation = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="/images/icon-efficiency.webp" alt="Accelerating Key Projects" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-efficiency.webp" alt="" aria-hidden="true" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Accelerating Key Projects</h4>
               <p className="text-muted-foreground">When a deadline is critical, our specialists can be deployed to provide the focused effort needed to push a project across the finish line on schedule.</p>
             </div>
 
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="/images/icon-llm.webp" alt="Solving Complex Problems" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-llm.webp" alt="" aria-hidden="true" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Solving Complex Problems</h4>
               <p className="text-muted-foreground">For unique or difficult technical challenges, we provide experts with deep, specialized knowledge to architect solutions and guide your team through implementation.</p>
             </div>
 
             <div className="bg-white border rounded-[10px] p-8 text-center shadow-sm hover:bg-[#F7F4FD] hover:shadow-md transition-colors duration-200">
-              <img src="/images/icon-staff.webp" alt="Mentorship and Upskilling" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
+              <img src="/images/icon-staff.webp" alt="" aria-hidden="true" width="80" height="80" loading="lazy" decoding="async" className="mx-auto mb-6 w-20 h-20 object-contain" />
               <h4 className="text-xl font-bold mb-3">Mentorship and Upskilling</h4>
               <p className="text-muted-foreground">Our integrated specialists do more than just execute; they share their knowledge, elevating the capabilities of your entire team for a lasting impact.</p>
             </div>
@@ -62,28 +105,7 @@ const StaffAugmentation = () => {
       <FAQSection
         badge="Frequently Asked Questions"
         title="Frequently Asked Questions"
-        faqs={[
-          {
-            question: 'How is this different from a traditional "staff augmentation" service?',
-            answer:
-              'We embed vetted, mission-ready specialists who act as integrated members of your team, not just temporary contractors. Our focus is strategic outcomes and operational discipline.',
-          },
-          {
-            question: 'How quickly can we integrate a specialist into your team?',
-            answer:
-              'Depending on role complexity, we can typically place mission-ready specialists within days to a few weeks, following a short onboarding and alignment phase.',
-          },
-          {
-            question: 'Do our integrated specialists work on-site?',
-            answer:
-              'We support both remote and on-site engagement models — we adapt to whatever model best fits your operational and security requirements.',
-          },
-          {
-            question: 'What happens after the project or "mission" is complete?',
-            answer:
-              'We provide knowledge transfer, documentation, and optional continued support to ensure your team retains capability and the system remains reliable.',
-          },
-        ]}
+        faqs={faqs}
       />
     
 
