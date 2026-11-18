@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema } from "@/lib/schema";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import BlogCard from "@/components/BlogCard";
@@ -24,8 +26,6 @@ const Blog = () => {
   const activeSlug = searchParams.get("category");
 
   useEffect(() => {
-    document.title = "Blog | Airbridge Devs";
-
     let active = true;
 
     listCategories().then((data) => {
@@ -87,11 +87,17 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-[hsl(var(--brand-lavender-dark))]">
+      <Seo
+        title="Blog | AI Engineering Insights | Airbridge Devs"
+        description="Practical writing on AI engineering, LLM cost, agents and delivery, for teams building the next decade rather than the next quarter."
+        path="/blog"
+        schema={[breadcrumbSchema([{ name: "Blog", path: "/blog" }])]}
+      />
       <Header />
 
       <PageHero
         title="Ideas That Power Intelligent Growth"
-        subtitle="Insights on AI, technology, and innovation—written for those building the next decade, not just the next quarter."
+        subtitle="Insights on AI, technology, and innovation, written for those building the next decade, not just the next quarter."
         backgroundImage="/images/blog-cover.jpeg"
       />
 

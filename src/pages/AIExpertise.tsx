@@ -1,4 +1,6 @@
 import Header from "@/components/Header";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import "../ai-operation-icons-fixed.css";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -133,6 +135,15 @@ const AIExpertise = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="LLM Integration, AI Guardrails & Automation | Airbridge Devs"
+        description="Our AI capabilities: LLM integration, guardrails, automation and foundational systems built for security, control and long-term scale."
+        path="/ai-expertise"
+        schema={[
+          breadcrumbSchema([{ name: "AI Expertise", path: "/ai-expertise" }]),
+          faqSchema(faqs),
+        ]}
+      />
       <Header />
 
       <PageHero

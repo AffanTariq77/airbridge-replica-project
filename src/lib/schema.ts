@@ -111,6 +111,35 @@ export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
   })),
 });
 
+/** A single blog post. */
+export const articleSchema = ({
+  title,
+  description,
+  path,
+  image,
+  datePublished,
+  dateModified,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  image?: string | null;
+  datePublished: string;
+  dateModified?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  url: `${SITE_ORIGIN}${path}`,
+  mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_ORIGIN}${path}` },
+  image: image ? [image] : [`${SITE_ORIGIN}/images/og-airbridge-devs.jpg`],
+  datePublished,
+  dateModified: dateModified ?? datePublished,
+  author: { "@id": ORGANIZATION_ID },
+  publisher: { "@id": ORGANIZATION_ID },
+});
+
 /** A single service offering page. */
 export const serviceSchema = ({
   name,

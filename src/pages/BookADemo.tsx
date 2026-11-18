@@ -4,6 +4,8 @@ import { CalendarCheck, Clock, Mail, Target } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema } from "@/lib/schema";
 
 const CALENDLY_URL = "https://calendly.com/airbridgedevs-info/30min";
 const REDIRECT_SECONDS = 5;
@@ -40,6 +42,12 @@ const BookADemo = () => {
 
   return (
     <div className="min-h-screen hero-gradient">
+      <Seo
+        title="Book a Briefing | Airbridge Devs"
+        description="Schedule a 30-minute briefing with the Airbridge Devs team to scope an AI engineering, LLM optimization or staff augmentation project."
+        path="/bookademo"
+        schema={[breadcrumbSchema([{ name: "Book a Briefing", path: "/bookademo" }])]}
+      />
       <Header />
 
       <section className="relative overflow-hidden py-8 lg:py-10">

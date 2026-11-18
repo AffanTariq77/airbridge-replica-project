@@ -15,10 +15,13 @@ import {
 } from "@/components/ui/accordion";
 import {
   getPostBySlug,
+  excerpt,
   readingTime,
   type BlogPost as BlogPostType,
   type BlogSectionStyle,
 } from "@/lib/blog";
+import Seo from "@/components/Seo";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 // Coloured words. The admin toolbar writes them as [words](color:purple) or
 // [words](color:#1a2b3c), and they render as a plain coloured span, not a link.
@@ -125,10 +128,6 @@ const BlogPost = () => {
     };
   }, [slug]);
 
-  useEffect(() => {
-    document.title = post ? `${post.title} | Airbridge Devs` : "Blog | Airbridge Devs";
-  }, [post]);
-
   // Go back to wherever they came from, falling back to the blog index on a
   // direct visit
   const goBack = () => {
@@ -222,6 +221,35 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-[hsl(var(--brand-lavender-dark))]">
+      {post && (
+        <Seo
+          // Post titles run long. Appending the brand to one that is already
+          // over ~52 characters only pushes the real title out of Google's
+          // ~60-character window, so the suffix is dropped in that case.
+          title={
+            post.title.length > 52 ? post.title : `${post.title} | Airbridge Devs`
+          }
+          description={excerpt(post, 150)}
+          path={`/blog/${post.slug}`}
+          image={post.cover_image_url ?? undefined}
+          type="article"
+          schema={[
+            breadcrumbSchema([
+              { name: "Blog", path: "/blog" },
+              { name: post.title, path: `/blog/${post.slug}` },
+            ]),
+            articleSchema({
+              title: post.title,
+              description: excerpt(post, 155),
+              path: `/blog/${post.slug}`,
+              image: post.cover_image_url,
+              datePublished: post.created_at,
+              dateModified: post.updated_at,
+            }),
+            ...(post.faqs?.length ? [faqSchema(post.faqs)] : []),
+          ]}
+        />
+      )}
       <Header />
 
       {/* White band so the article is clearly its own section, separate from

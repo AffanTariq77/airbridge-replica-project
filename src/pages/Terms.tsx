@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema } from "@/lib/schema";
 import Footer from "@/components/Footer";
 
 const sections = [
@@ -85,12 +87,15 @@ const sections = [
 ];
 
 const Terms = () => {
-  useEffect(() => {
-    document.title = "Terms and Conditions | Airbridge Devs";
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Terms and Conditions | Airbridge Devs"
+        description="The terms governing use of the Airbridge Devs website and our AI engineering, consulting and staff augmentation services."
+        path="/terms"
+        noindex
+        schema={[breadcrumbSchema([{ name: "Terms and Conditions", path: "/terms" }])]}
+      />
       <Header />
       <main className="container mx-auto max-w-3xl px-6 py-32">
         <h1 className="text-4xl font-bold mb-3">Terms and Conditions</h1>

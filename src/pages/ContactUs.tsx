@@ -1,4 +1,6 @@
 import Header from "@/components/Header";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import FAQSection from "@/components/FAQSection";
@@ -27,6 +29,15 @@ const ContactUs = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Contact Airbridge Devs | AI Engineering Enquiries"
+        description="Talk to Airbridge Devs about AI engineering, LLM optimization or staff augmentation. Email info@airbridgedevs.com or send a message."
+        path="/contact-us"
+        schema={[
+          breadcrumbSchema([{ name: "Contact Us", path: "/contact-us" }]),
+          faqSchema(faqs),
+        ]}
+      />
       <Header />
 
       <PageHero
