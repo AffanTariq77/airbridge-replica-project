@@ -52,6 +52,22 @@ const removeMeta = (keyAttr: "name" | "property", key: string) => {
 
 const SCHEMA_ID = "seo-jsonld";
 
+/**
+ * index.html's own tags, captured once before anything overwrites them.
+ *
+ * Routes that do not render <Seo> would otherwise keep whatever the previously
+ * visited route set, so a visitor clicking Services then About Us saw the
+ * Services title in their tab. Restoring these on unmount keeps every such page
+ * on the document default until it gets metadata of its own.
+ */
+const DOCUMENT_DEFAULTS = {
+  title: typeof document === "undefined" ? "" : document.title,
+  description:
+    typeof document === "undefined"
+      ? ""
+      : document.head.querySelector<HTMLMetaElement>('meta[name="description"]')?.content ?? "",
+};
+
 const Seo = ({
   title,
   description,
@@ -97,6 +113,19 @@ const Seo = ({
     setMeta("name", "twitter:title", title);
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", imageUrl);
+
+    return () => {
+      // Hand the document back to its defaults so a route without <Seo> does
+      // not inherit this one's title. A route that has its own <Seo> overwrites
+      // these again immediately, since cleanup runs before the next effect.
+      document.title = DOCUMENT_DEFAULTS.title;
+      setMeta("name", "description", DOCUMENT_DEFAULTS.description);
+      setMeta("property", "og:title", DOCUMENT_DEFAULTS.title);
+      setMeta("property", "og:description", DOCUMENT_DEFAULTS.description);
+      setMeta("name", "twitter:title", DOCUMENT_DEFAULTS.title);
+      setMeta("name", "twitter:description", DOCUMENT_DEFAULTS.description);
+      removeMeta("name", "robots");
+    };
   }, [title, description, path, image, type, noindex]);
 
   useEffect(() => {
